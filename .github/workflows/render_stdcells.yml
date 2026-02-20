@@ -23,15 +23,19 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y xvfb libqt5widgets5 libqt5gui5 libqt5core5a libqt5svg5 libqt5network5 libqt5xml5 libqt5printsupport5
+          sudo apt-get install -y xvfb libqt5widgets5 libqt5gui5 libqt5core5a libqt5svg5 libqt5network5 libqt5xml5 libqt5printsupport5 kicad librsvg2-bin
 
       - name: Install Python dependencies
         run: |
           pip install klayout
 
-      - name: Render cells
+      - name: Render Layouts
         run: |
           xvfb-run python3 ihp-sg13g2/libs.ref/sg13g2_stdcell/scripts/render_stdcells.py
+
+      - name: Render Schematics
+        run: |
+          python3 ihp-sg13g2/libs.ref/sg13g2_stdcell/scripts/render_schematics.py
 
       - name: Zip PNGs
         run: |
