@@ -1,0 +1,52 @@
+name: Render Standard Cells
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  render:
+    name: Render and Upload Assets
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb libqt5widgets5 libqt5gui5 libqt5core5a libqt5svg5 libqt5network5 libqt5xml5 libqt5printsupport5
+
+      - name: Install Python dependencies
+        run: |
+          pip install klayout
+
+      - name: Render cells
+        run: |
+          xvfb-run python3 ihp-sg13g2/libs.ref/sg13g2_stdcell/scripts/render_stdcells.py
+
+      - name: Zip PNGs
+        run: |
+          zip -r sg13g2_stdcell_png.zip rendered_cells
+
+      - name: Upload Release Asset
+        uses: softprops/action-gh-release@v2
+        if: github.event_name == 'release'
+        with:
+          files: sg13g2_stdcell_png.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sg13g2_stdcell_png
+          path: sg13g2_stdcell_png.zip
