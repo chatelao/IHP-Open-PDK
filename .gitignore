@@ -192,3 +192,8 @@ cliff*toml
 
 # OpneVAF compiled models dir
 */*/ngspice/osdi
+
+# Rendered cells and temporary files
+rendered_cells/
+output_kicad/
+nl2sch/
