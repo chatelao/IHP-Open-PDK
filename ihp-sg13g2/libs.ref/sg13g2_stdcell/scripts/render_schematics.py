@@ -24,59 +24,67 @@ import sys
 import shutil
 
 
-def render_schematics(kicad_output_dir, output_dir):
-    """Render all KiCAD schematics in a directory to PNG images."""
+def render_schematics(xschem_output_dir, pdk_xschem_dir, output_dir):
+    """Render all Xschem schematics to PNG images, prioritizing PDK schematics."""
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    for file in os.listdir(kicad_output_dir):
-        if file.endswith(".kicad_sch"):
+    # We want to render EACH cell found in the generated directory
+    for file in os.listdir(xschem_output_dir):
+        if file.endswith(".sch"):
             cell_name = os.path.splitext(file)[0]
-            temp_svg_dir = f"temp_svg_{cell_name}"
             png_path = os.path.join(output_dir, f"{cell_name}_sch.png")
 
-            print(f"Rendering {cell_name} schematic...")
+            # Prioritize PDK schematic if it exists
+            pdk_sch = os.path.join(pdk_xschem_dir, file)
+            if os.path.exists(pdk_sch):
+                sch_to_render = pdk_sch
+                print(f"Rendering {cell_name} schematic from PDK...")
+            else:
+                sch_to_render = os.path.join(xschem_output_dir, file)
+                print(f"Rendering {cell_name} schematic from generated source...")
 
-            # Export to SVG (KiCAD 7.x creates a directory)
             try:
-                subprocess.run([
-                    "kicad-cli", "sch", "export", "svg",
-                    "--output", temp_svg_dir,
-                    os.path.join(kicad_output_dir, file)
-                ], check=True, capture_output=True)
+                env = os.environ.copy()
+                if "PDK_ROOT" not in env:
+                    script_dir = os.path.dirname(os.path.abspath(__file__))
+                    root_dir = os.path.normpath(os.path.join(script_dir, "../../../.."))
+                    env["PDK_ROOT"] = root_dir
 
-                svg_file = os.path.join(temp_svg_dir, f"{cell_name}.svg")
-                if os.path.exists(svg_file):
-                    # Convert SVG to PNG
-                    subprocess.run([
-                        "rsvg-convert", "-f", "png",
-                        "-o", png_path,
-                        svg_file
-                    ], check=True)
+                subprocess.run([
+                    "xvfb-run", "-a", "xschem", "-p", "--png", "--quit",
+                    "--output", output_dir,
+                    sch_to_render
+                ], check=True, capture_output=True, env=env)
+
+                # Xschem creates <cell_name>.png
+                generated_png = os.path.join(output_dir, f"{cell_name}.png")
+                if os.path.exists(generated_png):
+                    if os.path.exists(png_path):
+                        os.remove(png_path)
+                    os.rename(generated_png, png_path)
                 else:
-                    print(f"Error: SVG file not found at {svg_file}")
+                    print(f"Error: PNG file not found at {generated_png}")
 
             except subprocess.CalledProcessError as e:
                 print(f"Error rendering {cell_name}: {e}")
                 print(e.stderr.decode())
-            finally:
-                if os.path.exists(temp_svg_dir):
-                    shutil.rmtree(temp_svg_dir)
 
 
 if __name__ == "__main__":
     # Define paths
     script_dir = os.path.dirname(os.path.abspath(__file__))
     root_dir = os.path.normpath(os.path.join(script_dir, "../../../.."))
-    spice_to_kicad_script = os.path.join(root_dir, "ihp-sg13g2/libs.tech/kicad/scripts/spice_to_kicad.py")
-    kicad_output_dir = os.path.join(os.getcwd(), "output_kicad")
+    spice_to_xschem_script = os.path.join(root_dir, "ihp-sg13g2/libs.tech/xschem/scripts/spice_to_xschem.py")
+    xschem_output_dir = os.path.join(os.getcwd(), "output_xschem")
+    pdk_xschem_dir = os.path.join(root_dir, "ihp-sg13g2/libs.tech/xschem/sg13g2_stdcells")
     out_dir = os.path.join(os.getcwd(), "rendered_cells")
 
-    # Step 1: Run spice_to_kicad.py
-    print(f"Running {spice_to_kicad_script}...")
-    subprocess.run([sys.executable, spice_to_kicad_script], check=True)
+    # Step 1: Run spice_to_xschem.py
+    print(f"Running {spice_to_xschem_script}...")
+    subprocess.run([sys.executable, spice_to_xschem_script], check=True)
 
-    # Step 2: Render generated schematics
-    render_schematics(kicad_output_dir, out_dir)
+    # Step 2: Render schematics
+    render_schematics(xschem_output_dir, pdk_xschem_dir, out_dir)
 
     print("Schematic rendering complete.")

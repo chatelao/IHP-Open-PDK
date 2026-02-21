@@ -196,4 +196,6 @@ cliff*toml
 # Rendered cells and temporary files
 rendered_cells/
 output_kicad/
+output_xschem/
 nl2sch/
+actions_venv/
