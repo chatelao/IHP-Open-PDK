@@ -130,27 +130,27 @@
   (text "Unknown / Unsorted" (at 0.635 6.985 0)
     (effects (font (size 4 4)) (justify left bottom))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 15.24 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "85b8dfff-226a-4df9-8f94-d119e800e84e")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 15.24 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "598b8c72-794e-4cfe-8e39-0f73c7932934")
     (property "Reference" "M?" (id 0) (at 20.32 23.51 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_nmos" (id 1) (at 20.32 26.05 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 53.34 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "6424675b-032f-47ed-bbc9-6b75662b5e76")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 53.34 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "c8642a72-3fd5-4cb1-9345-44b9027c3e23")
     (property "Reference" "M?" (id 0) (at 58.42 23.51 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_nmos" (id 1) (at 58.42 26.05 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 91.44 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "27b0c2d9-caae-4b7b-a23d-fc237c6deef0")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 91.44 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "4d2a5aea-c32f-4616-af2c-28cfc617cc09")
     (property "Reference" "M?" (id 0) (at 96.52000000000001 23.51 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_nmos" (id 1) (at 96.52000000000001 26.05 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 15.24 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "eb221847-5eb0-4c66-be22-808ae79f0290")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 15.24 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "f3c1392b-cec7-4550-a438-a097487bb301")
     (property "Reference" "M?" (id 0) (at 20.32 66.07000000000001 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_pmos" (id 1) (at 20.32 68.61 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 53.34 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "8892c698-8638-48a9-840d-1a574270f599")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 53.34 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "9827d202-fa1f-4683-998d-697319e76639")
     (property "Reference" "M?" (id 0) (at 58.42 66.07000000000001 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_pmos" (id 1) (at 58.42 68.61 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 91.44 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "45b36c7c-7c7b-4321-9111-2b656bd4eb03")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 91.44 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "531c4de0-1775-4322-a349-e97a698122d1")
     (property "Reference" "M?" (id 0) (at 96.52000000000001 66.07000000000001 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_pmos" (id 1) (at 96.52000000000001 68.61 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
@@ -161,22 +161,22 @@
 
   (symbol_instances
 
-    (path "/85b8dfff-226a-4df9-8f94-d119e800e84e"
+    (path "/598b8c72-794e-4cfe-8e39-0f73c7932934"
       (reference "XN0") (unit 1) (value "sg13_lv_nmos") (footprint "")
     )
-    (path "/6424675b-032f-47ed-bbc9-6b75662b5e76"
+    (path "/c8642a72-3fd5-4cb1-9345-44b9027c3e23"
       (reference "XN1") (unit 1) (value "sg13_lv_nmos") (footprint "")
     )
-    (path "/27b0c2d9-caae-4b7b-a23d-fc237c6deef0"
+    (path "/4d2a5aea-c32f-4616-af2c-28cfc617cc09"
       (reference "XN2") (unit 1) (value "sg13_lv_nmos") (footprint "")
     )
-    (path "/eb221847-5eb0-4c66-be22-808ae79f0290"
+    (path "/f3c1392b-cec7-4550-a438-a097487bb301"
       (reference "XP0") (unit 1) (value "sg13_lv_pmos") (footprint "")
     )
-    (path "/8892c698-8638-48a9-840d-1a574270f599"
+    (path "/9827d202-fa1f-4683-998d-697319e76639"
       (reference "XP1") (unit 1) (value "sg13_lv_pmos") (footprint "")
     )
-    (path "/45b36c7c-7c7b-4321-9111-2b656bd4eb03"
+    (path "/531c4de0-1775-4322-a349-e97a698122d1"
       (reference "XP2") (unit 1) (value "sg13_lv_pmos") (footprint "")
     )
   )

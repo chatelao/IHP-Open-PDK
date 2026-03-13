@@ -258,91 +258,91 @@
   (text "Unknown / Unsorted" (at 0.635 6.985 0)
     (effects (font (size 4 4)) (justify left bottom))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 15.24 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "1b32262e-1c29-4a1d-bb8d-bca7f2c66f47")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 15.24 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "d674a3e7-9e6b-4230-8f45-757c874c8746")
     (property "Reference" "M?" (id 0) (at 20.32 23.51 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_pmos" (id 1) (at 20.32 26.05 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 53.34 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "620eb4d8-ba82-454a-8515-f01e8a099346")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 53.34 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "7e2992c8-b2d3-4872-9cea-61edccb8d109")
     (property "Reference" "M?" (id 0) (at 58.42 23.51 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_pmos" (id 1) (at 58.42 26.05 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 91.44 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "a6dd4392-493f-4eed-b7c8-7733462a0c46")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 91.44 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "d045e235-7e9c-4126-b21e-b8df52e2594d")
     (property "Reference" "M?" (id 0) (at 96.52000000000001 23.51 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_pmos" (id 1) (at 96.52000000000001 26.05 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 129.54000000000002 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "c682d38e-a036-4271-8148-0947cd15e4ba")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 129.54000000000002 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "59fa5607-f0db-43eb-b1c9-cd5ed7ec0c84")
     (property "Reference" "M?" (id 0) (at 134.62 23.51 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_pmos" (id 1) (at 134.62 26.05 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 167.64000000000001 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "d14bd4ca-08f3-46e8-9ecf-c46401b7b258")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 167.64000000000001 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "6ecbd898-3193-47ba-99ad-6f5bb41a5a58")
     (property "Reference" "M?" (id 0) (at 172.72 23.51 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_pmos" (id 1) (at 172.72 26.05 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 205.74 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "6727700f-ab7a-43bf-86d8-a5536071ff5f")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 205.74 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "ecb8760d-772e-410c-9a20-b15571925f68")
     (property "Reference" "M?" (id 0) (at 210.82 23.51 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_pmos" (id 1) (at 210.82 26.05 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 243.84 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "5ed0691f-3f1f-484c-a1ea-07272c917235")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 243.84 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "1eff0cc7-190d-4e0c-b191-7c78211e25b1")
     (property "Reference" "M?" (id 0) (at 248.92 23.51 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_pmos" (id 1) (at 248.92 26.05 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 281.94 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "bfbc11b7-55f6-488d-8406-a7efd8fd2cb5")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 281.94 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "89ff3bf9-1e3d-4005-b5f4-6676c7212dc8")
     (property "Reference" "M?" (id 0) (at 287.02 23.51 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_pmos" (id 1) (at 287.02 26.05 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 320.04 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "692e34eb-fe4b-44c8-91ca-ee5e5deb4f9f")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 320.04 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "f4fa63f9-93b4-4c9f-853e-f5b09f1dd6cd")
     (property "Reference" "M?" (id 0) (at 325.12 23.51 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_pmos" (id 1) (at 325.12 26.05 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 358.14000000000004 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "ce9f1473-0de5-4bf9-9535-7359eb2aa9ec")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 358.14000000000004 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "9598b9bc-d33e-4373-98fb-e6c0bbe94cd0")
     (property "Reference" "M?" (id 0) (at 363.22 23.51 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_pmos" (id 1) (at 363.22 26.05 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 396.24000000000007 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "fbbd9163-d7ac-4ae4-9d64-39c8dfc4269e")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 396.24000000000007 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "9ec0c4b6-4155-4155-aee1-0e70943be187")
     (property "Reference" "M?" (id 0) (at 401.32000000000005 23.51 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_pmos" (id 1) (at 401.32000000000005 26.05 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 15.24 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "f68dc1d3-2488-4ca2-89e0-884fa9d99d27")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 15.24 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "4d0d8dd4-9aad-4b01-9797-593b6e3fba5f")
     (property "Reference" "M?" (id 0) (at 20.32 66.07000000000001 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_nmos" (id 1) (at 20.32 68.61 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 53.34 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "b8933e2d-ea54-4fad-8451-7af0501c4526")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 53.34 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "187bac29-0156-45b4-9874-e53d35569d4a")
     (property "Reference" "M?" (id 0) (at 58.42 66.07000000000001 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_nmos" (id 1) (at 58.42 68.61 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 91.44 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "4f25bb7d-288c-457a-afda-1bd48dbdf7a7")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 91.44 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "231b74af-e791-493c-9d13-78fa31b1bc14")
     (property "Reference" "M?" (id 0) (at 96.52000000000001 66.07000000000001 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_nmos" (id 1) (at 96.52000000000001 68.61 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 129.54000000000002 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "d352015e-ae31-4400-965b-4ff81dbbfa19")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 129.54000000000002 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "a67712da-8260-48f0-9b8f-1fdc3cc1be48")
     (property "Reference" "M?" (id 0) (at 134.62 66.07000000000001 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_nmos" (id 1) (at 134.62 68.61 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 167.64000000000001 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "000edd83-9107-4d09-91d0-909279414064")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 167.64000000000001 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "8c301e1d-367e-4fd5-9f25-0cd24800fad5")
     (property "Reference" "M?" (id 0) (at 172.72 66.07000000000001 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_nmos" (id 1) (at 172.72 68.61 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 205.74 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "7a08a407-f333-4241-b537-46bc31f21c3e")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 205.74 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "6a38158c-e9b6-4123-a3f9-439950bfc699")
     (property "Reference" "M?" (id 0) (at 210.82 66.07000000000001 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_nmos" (id 1) (at 210.82 68.61 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 243.84 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "5c92ca20-084a-4f44-a26c-563dc3fff419")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 243.84 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "3925c5fc-8878-4f40-884d-c4976532c5df")
     (property "Reference" "M?" (id 0) (at 248.92 66.07000000000001 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_nmos" (id 1) (at 248.92 68.61 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 281.94 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "f1940dd4-0fc0-4249-83b8-d38dc99ed396")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 281.94 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "ba14ea1c-1e12-4191-9b13-53e0db9991c6")
     (property "Reference" "M?" (id 0) (at 287.02 66.07000000000001 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_nmos" (id 1) (at 287.02 68.61 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 320.04 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "db8cad2e-8107-46ff-b5a2-4adbc1dbfb58")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 320.04 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "4cc178c2-71a1-406d-bc7f-8875defd33ee")
     (property "Reference" "M?" (id 0) (at 325.12 66.07000000000001 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_nmos" (id 1) (at 325.12 68.61 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 358.14000000000004 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "bf0e2e03-fb28-467e-8e89-08bac8c5449c")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 358.14000000000004 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "d52f7c37-b2ab-46e5-9c94-a6dd7c75b6fd")
     (property "Reference" "M?" (id 0) (at 363.22 66.07000000000001 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_nmos" (id 1) (at 363.22 68.61 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 396.24000000000007 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "3996b4ed-f3ad-4136-a2c0-152118e244ce")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 396.24000000000007 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "eb02b7e0-c9fb-47bb-a722-181c35b7c8dc")
     (property "Reference" "M?" (id 0) (at 401.32000000000005 66.07000000000001 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_nmos" (id 1) (at 401.32000000000005 68.61 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
@@ -353,70 +353,70 @@
 
   (symbol_instances
 
-    (path "/1b32262e-1c29-4a1d-bb8d-bca7f2c66f47"
+    (path "/d674a3e7-9e6b-4230-8f45-757c874c8746"
       (reference "XP10") (unit 1) (value "sg13_lv_pmos") (footprint "")
     )
-    (path "/620eb4d8-ba82-454a-8515-f01e8a099346"
+    (path "/7e2992c8-b2d3-4872-9cea-61edccb8d109"
       (reference "XP4") (unit 1) (value "sg13_lv_pmos") (footprint "")
     )
-    (path "/a6dd4392-493f-4eed-b7c8-7733462a0c46"
+    (path "/d045e235-7e9c-4126-b21e-b8df52e2594d"
       (reference "XP1") (unit 1) (value "sg13_lv_pmos") (footprint "")
     )
-    (path "/c682d38e-a036-4271-8148-0947cd15e4ba"
+    (path "/59fa5607-f0db-43eb-b1c9-cd5ed7ec0c84"
       (reference "XP8") (unit 1) (value "sg13_lv_pmos") (footprint "")
     )
-    (path "/d14bd4ca-08f3-46e8-9ecf-c46401b7b258"
+    (path "/6ecbd898-3193-47ba-99ad-6f5bb41a5a58"
       (reference "XP2") (unit 1) (value "sg13_lv_pmos") (footprint "")
     )
-    (path "/6727700f-ab7a-43bf-86d8-a5536071ff5f"
+    (path "/ecb8760d-772e-410c-9a20-b15571925f68"
       (reference "XP7") (unit 1) (value "sg13_lv_pmos") (footprint "")
     )
-    (path "/5ed0691f-3f1f-484c-a1ea-07272c917235"
+    (path "/1eff0cc7-190d-4e0c-b191-7c78211e25b1"
       (reference "XP5") (unit 1) (value "sg13_lv_pmos") (footprint "")
     )
-    (path "/bfbc11b7-55f6-488d-8406-a7efd8fd2cb5"
+    (path "/89ff3bf9-1e3d-4005-b5f4-6676c7212dc8"
       (reference "XP0") (unit 1) (value "sg13_lv_pmos") (footprint "")
     )
-    (path "/692e34eb-fe4b-44c8-91ca-ee5e5deb4f9f"
+    (path "/f4fa63f9-93b4-4c9f-853e-f5b09f1dd6cd"
       (reference "XP9") (unit 1) (value "sg13_lv_pmos") (footprint "")
     )
-    (path "/ce9f1473-0de5-4bf9-9535-7359eb2aa9ec"
+    (path "/9598b9bc-d33e-4373-98fb-e6c0bbe94cd0"
       (reference "XP6") (unit 1) (value "sg13_lv_pmos") (footprint "")
     )
-    (path "/fbbd9163-d7ac-4ae4-9d64-39c8dfc4269e"
+    (path "/9ec0c4b6-4155-4155-aee1-0e70943be187"
       (reference "XP3") (unit 1) (value "sg13_lv_pmos") (footprint "")
     )
-    (path "/f68dc1d3-2488-4ca2-89e0-884fa9d99d27"
+    (path "/4d0d8dd4-9aad-4b01-9797-593b6e3fba5f"
       (reference "XN5") (unit 1) (value "sg13_lv_nmos") (footprint "")
     )
-    (path "/b8933e2d-ea54-4fad-8451-7af0501c4526"
+    (path "/187bac29-0156-45b4-9874-e53d35569d4a"
       (reference "XN9") (unit 1) (value "sg13_lv_nmos") (footprint "")
     )
-    (path "/4f25bb7d-288c-457a-afda-1bd48dbdf7a7"
+    (path "/231b74af-e791-493c-9d13-78fa31b1bc14"
       (reference "XN2") (unit 1) (value "sg13_lv_nmos") (footprint "")
     )
-    (path "/d352015e-ae31-4400-965b-4ff81dbbfa19"
+    (path "/a67712da-8260-48f0-9b8f-1fdc3cc1be48"
       (reference "XN4") (unit 1) (value "sg13_lv_nmos") (footprint "")
     )
-    (path "/000edd83-9107-4d09-91d0-909279414064"
+    (path "/8c301e1d-367e-4fd5-9f25-0cd24800fad5"
       (reference "XN7") (unit 1) (value "sg13_lv_nmos") (footprint "")
     )
-    (path "/7a08a407-f333-4241-b537-46bc31f21c3e"
+    (path "/6a38158c-e9b6-4123-a3f9-439950bfc699"
       (reference "XN8") (unit 1) (value "sg13_lv_nmos") (footprint "")
     )
-    (path "/5c92ca20-084a-4f44-a26c-563dc3fff419"
+    (path "/3925c5fc-8878-4f40-884d-c4976532c5df"
       (reference "XN10") (unit 1) (value "sg13_lv_nmos") (footprint "")
     )
-    (path "/f1940dd4-0fc0-4249-83b8-d38dc99ed396"
+    (path "/ba14ea1c-1e12-4191-9b13-53e0db9991c6"
       (reference "XN1") (unit 1) (value "sg13_lv_nmos") (footprint "")
     )
-    (path "/db8cad2e-8107-46ff-b5a2-4adbc1dbfb58"
+    (path "/4cc178c2-71a1-406d-bc7f-8875defd33ee"
       (reference "XN3") (unit 1) (value "sg13_lv_nmos") (footprint "")
     )
-    (path "/bf0e2e03-fb28-467e-8e89-08bac8c5449c"
+    (path "/d52f7c37-b2ab-46e5-9c94-a6dd7c75b6fd"
       (reference "XN0") (unit 1) (value "sg13_lv_nmos") (footprint "")
     )
-    (path "/3996b4ed-f3ad-4136-a2c0-152118e244ce"
+    (path "/eb02b7e0-c9fb-47bb-a722-181c35b7c8dc"
       (reference "XN6") (unit 1) (value "sg13_lv_nmos") (footprint "")
     )
   )

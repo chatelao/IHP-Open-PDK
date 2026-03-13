@@ -98,11 +98,11 @@
   (text "Unknown / Unsorted" (at 0.635 6.985 0)
     (effects (font (size 4 4)) (justify left bottom))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 15.24 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "be6450b2-02b7-4e5c-a09f-6d75baf5bc06")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_pmos") (at 15.24 24.78 0) (unit 1) (in_bom yes) (on_board yes) (uuid "1245792d-85ed-4942-9ea7-9bd7f788227a")
     (property "Reference" "M?" (id 0) (at 20.32 23.51 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_pmos" (id 1) (at 20.32 26.05 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
-  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 15.24 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "5ebfcd36-4b85-4ffd-9ff6-d97b7d89333d")
+  (symbol (lib_id "sg13g2_pr:sg13_lv_nmos") (at 15.24 67.34 0) (unit 1) (in_bom yes) (on_board yes) (uuid "69c151cd-4f0f-4a4d-867d-d6b08ffa7e13")
     (property "Reference" "M?" (id 0) (at 20.32 66.07000000000001 0) (effects (font (size 1.27 1.27)) (justify left)))
     (property "Value" "sg13_lv_nmos" (id 1) (at 20.32 68.61 0) (effects (font (size 1.27 1.27)) (justify left)))
   )
@@ -113,10 +113,10 @@
 
   (symbol_instances
 
-    (path "/be6450b2-02b7-4e5c-a09f-6d75baf5bc06"
+    (path "/1245792d-85ed-4942-9ea7-9bd7f788227a"
       (reference "XP0") (unit 1) (value "sg13_lv_pmos") (footprint "")
     )
-    (path "/5ebfcd36-4b85-4ffd-9ff6-d97b7d89333d"
+    (path "/69c151cd-4f0f-4a4d-867d-d6b08ffa7e13"
       (reference "XN0") (unit 1) (value "sg13_lv_nmos") (footprint "")
     )
   )
