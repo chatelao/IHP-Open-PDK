@@ -10,6 +10,15 @@ Multiplexer from 2 to 1
 -  **Inputs**:  3 (A0, A1, S)
 -  **Outputs**: 1 (X)
 
+sg13g2_mux2_2 schematic
+-----------------------
+
+.. figure:: ../../../_static/schematics/sg13g2_mux2_2.svg
+    :align: center
+    :width: 80%
+
+    sg13g2_mux2_2 schematic
+
 sg13g2_mux2_2 GDSII layouts
 ----------------------------
 
@@ -17,4 +26,4 @@ sg13g2_mux2_2 GDSII layouts
     :align: center
     :width: 80%
 
-    sg13g2_mux2_2
+    sg13g2_mux2_2 layout

@@ -10,6 +10,15 @@ Constant logic 1
 -  **Inputs**:  0 ()
 -  **Outputs**: 1 (L_LO)
 
+sg13g2_tielo schematic
+----------------------
+
+.. figure:: ../../../_static/schematics/sg13g2_tielo.svg
+    :align: center
+    :width: 80%
+
+    sg13g2_tielo schematic
+
 sg13g2_tielo GDSII layouts
 ---------------------------
 
@@ -17,4 +26,4 @@ sg13g2_tielo GDSII layouts
     :align: center
     :width: 80%
 
-    sg13g2_tielo
+    sg13g2_tielo layout

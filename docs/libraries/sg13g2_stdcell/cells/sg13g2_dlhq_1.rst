@@ -10,6 +10,15 @@ High-Active GATE Single-Output Q D-latch
 -  **Inputs**:  2 (D, GATE)
 -  **Outputs**: 1 (Q)
 
+sg13g2_dlhq_1 schematic
+-----------------------
+
+.. figure:: ../../../_static/schematics/sg13g2_dlhq_1.svg
+    :align: center
+    :width: 80%
+
+    sg13g2_dlhq_1 schematic
+
 sg13g2_dlhq_1 GDSII layouts
 ----------------------------
 
@@ -17,4 +26,4 @@ sg13g2_dlhq_1 GDSII layouts
     :align: center
     :width: 80%
 
-    sg13g2_dlhq_1
+    sg13g2_dlhq_1 layout

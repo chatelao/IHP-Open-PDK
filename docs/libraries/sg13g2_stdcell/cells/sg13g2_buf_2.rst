@@ -10,6 +10,15 @@ Buffer drive strength 2
 -  **Inputs**:  1 (A)
 -  **Outputs**: 1 (X)
 
+sg13g2_buf_2 schematic
+----------------------
+
+.. figure:: ../../../_static/schematics/sg13g2_buf_2.svg
+    :align: center
+    :width: 80%
+
+    sg13g2_buf_2 schematic
+
 sg13g2_buf_2 GDSII layouts
 ---------------------------
 
@@ -17,4 +26,4 @@ sg13g2_buf_2 GDSII layouts
     :align: center
     :width: 80%
 
-    sg13g2_buf_2
+    sg13g2_buf_2 layout

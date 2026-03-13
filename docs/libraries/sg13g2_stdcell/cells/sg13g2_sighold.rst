@@ -10,6 +10,15 @@ Leakage current compensator (bus holder)
 -  **Inputs**:  0 ()
 -  **Outputs**: 0 ()
 
+sg13g2_sighold schematic
+------------------------
+
+.. figure:: ../../../_static/schematics/sg13g2_sighold.svg
+    :align: center
+    :width: 80%
+
+    sg13g2_sighold schematic
+
 sg13g2_sighold GDSII layouts
 -----------------------------
 
@@ -17,4 +26,4 @@ sg13g2_sighold GDSII layouts
     :align: center
     :width: 80%
 
-    sg13g2_sighold
+    sg13g2_sighold layout

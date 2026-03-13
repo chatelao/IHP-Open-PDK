@@ -10,6 +10,15 @@ sg13g2_nand3b_1
 -  **Inputs**:  3 (A_N, B, C)
 -  **Outputs**: 1 (Y)
 
+sg13g2_nand3b_1 schematic
+-------------------------
+
+.. figure:: ../../../_static/schematics/sg13g2_nand3b_1.svg
+    :align: center
+    :width: 80%
+
+    sg13g2_nand3b_1 schematic
+
 sg13g2_nand3b_1 GDSII layouts
 ------------------------------
 
@@ -17,4 +26,4 @@ sg13g2_nand3b_1 GDSII layouts
     :align: center
     :width: 80%
 
-    sg13g2_nand3b_1
+    sg13g2_nand3b_1 layout
