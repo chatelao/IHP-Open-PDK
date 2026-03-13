@@ -146,6 +146,10 @@ def main():
             shutil.copy(src_image, os.path.join(image_dst_dir, image_name))
 
     print(f"Generated {len(cells)} documentation files.")
+    if image_count > 0:
+        print(f"Copied {image_count} images from {image_src_dir} to {image_dst_dir}")
+    else:
+        print(f"No images found in {image_src_dir}. Existing images in {image_dst_dir} were preserved.")
 
     if cells:
         with open(os.path.join(output_dir, "index.rst"), 'w') as f:
