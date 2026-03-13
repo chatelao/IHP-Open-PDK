@@ -1,7 +1,7 @@
 sg13g2_a22oi_1
 ==============
 
-**a22oi**
+2-input AND into both inputs of 2-input NOR.
 
 -  **Cell name**: sg13g2_a22oi_1
 -  **Type**: cell

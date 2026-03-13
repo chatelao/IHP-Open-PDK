@@ -1,13 +1,13 @@
 sg13g2_dfrbp_1
 ==============
 
-**dffrr**
+Posedge Two-Outputs Q and Q_N D-Flip-Flop with Low-Active Reset
 
 -  **Cell name**: sg13g2_dfrbp_1
 -  **Type**: cell
 -  **Verilog name**: sg13g2_dfrbp_1
 -  **Library**: sg13g2_stdcell
--  **Inputs**:  3 (D, RESET_B, CLK)
+-  **Inputs**:  3 (CLK, D, RESET_B)
 -  **Outputs**: 2 (Q, Q_N)
 
 sg13g2_dfrbp_1 GDSII layouts

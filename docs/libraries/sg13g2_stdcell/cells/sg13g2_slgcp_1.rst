@@ -1,13 +1,13 @@
 sg13g2_slgcp_1
 ==============
 
-**sgclk**
+Scan gated clock
 
 -  **Cell name**: sg13g2_slgcp_1
 -  **Type**: cell
 -  **Verilog name**: sg13g2_slgcp_1
 -  **Library**: sg13g2_stdcell
--  **Inputs**:  3 (GATE, SCE, CLK)
+-  **Inputs**:  3 (GATE, CLK, SCE)
 -  **Outputs**: 1 (GCLK)
 
 sg13g2_slgcp_1 GDSII layouts

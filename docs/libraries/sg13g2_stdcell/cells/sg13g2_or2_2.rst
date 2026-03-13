@@ -1,7 +1,7 @@
 sg13g2_or2_2
 ============
 
-**or2**
+2-input OR
 
 -  **Cell name**: sg13g2_or2_2
 -  **Type**: cell

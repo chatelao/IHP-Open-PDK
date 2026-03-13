@@ -1,7 +1,7 @@
 sg13g2_dlhq_1
 =============
 
-**DLHQ**
+High-Active GATE Single-Output Q D-latch
 
 -  **Cell name**: sg13g2_dlhq_1
 -  **Type**: cell

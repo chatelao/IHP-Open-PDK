@@ -1,7 +1,7 @@
 sg13g2_o21ai_1
 ==============
 
-**o21ai**
+2-input OR into 2-input NAND
 
 -  **Cell name**: sg13g2_o21ai_1
 -  **Type**: cell

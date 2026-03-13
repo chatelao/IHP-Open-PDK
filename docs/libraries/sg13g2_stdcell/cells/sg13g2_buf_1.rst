@@ -1,7 +1,7 @@
 sg13g2_buf_1
 ============
 
-**BU**
+Buffer drive strength 1
 
 -  **Cell name**: sg13g2_buf_1
 -  **Type**: cell

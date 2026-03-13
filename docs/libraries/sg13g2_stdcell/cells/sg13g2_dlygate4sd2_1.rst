@@ -1,7 +1,7 @@
 sg13g2_dlygate4sd2_1
 ====================
 
-**DLY2**
+Delay Cell, typical 0.45 ns
 
 -  **Cell name**: sg13g2_dlygate4sd2_1
 -  **Type**: cell

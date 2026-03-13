@@ -1,7 +1,7 @@
 sg13g2_inv_2
 ============
 
-**IN**
+Inverter
 
 -  **Cell name**: sg13g2_inv_2
 -  **Type**: cell

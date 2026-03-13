@@ -1,7 +1,7 @@
 sg13g2_decap_4
 ==============
 
-**DECAP**
+Decoupling capasitance filler cell
 
 -  **Cell name**: sg13g2_decap_4
 -  **Type**: cell

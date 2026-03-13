@@ -1,7 +1,7 @@
 sg13g2_fill_2
 =============
 
-**fill**
+Filler 2 Tracks Width
 
 -  **Cell name**: sg13g2_fill_2
 -  **Type**: cell

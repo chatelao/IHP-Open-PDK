@@ -1,7 +1,7 @@
 sg13g2_nand2_2
 ==============
 
-**nand2**
+2-input NAND
 
 -  **Cell name**: sg13g2_nand2_2
 -  **Type**: cell

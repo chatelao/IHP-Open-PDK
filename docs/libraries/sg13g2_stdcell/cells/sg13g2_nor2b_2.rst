@@ -1,7 +1,7 @@
 sg13g2_nor2b_2
 ==============
 
-**nor2b**
+2-input NOR2 with Inverted Input B_N
 
 -  **Cell name**: sg13g2_nor2b_2
 -  **Type**: cell
