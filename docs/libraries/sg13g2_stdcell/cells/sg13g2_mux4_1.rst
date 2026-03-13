@@ -1,7 +1,7 @@
 sg13g2_mux4_1
 =============
 
-**mux4**
+Multiplexer from 4 to 1
 
 -  **Cell name**: sg13g2_mux4_1
 -  **Type**: cell

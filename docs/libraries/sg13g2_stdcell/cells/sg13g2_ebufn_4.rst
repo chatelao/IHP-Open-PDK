@@ -1,7 +1,7 @@
 sg13g2_ebufn_4
 ==============
 
-**BTL**
+Tristate Buffer with Low-Active Enable TE_B
 
 -  **Cell name**: sg13g2_ebufn_4
 -  **Type**: cell

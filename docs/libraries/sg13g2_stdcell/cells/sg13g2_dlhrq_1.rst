@@ -1,13 +1,13 @@
 sg13g2_dlhrq_1
 ==============
 
-**DLHRQ**
+High-Active Gate Single-Output Q D-latch with Low-Active Reset
 
 -  **Cell name**: sg13g2_dlhrq_1
 -  **Type**: cell
 -  **Verilog name**: sg13g2_dlhrq_1
 -  **Library**: sg13g2_stdcell
--  **Inputs**:  3 (D, RESET_B, GATE)
+-  **Inputs**:  3 (D, GATE, RESET_B)
 -  **Outputs**: 1 (Q)
 
 sg13g2_dlhrq_1 GDSII layouts

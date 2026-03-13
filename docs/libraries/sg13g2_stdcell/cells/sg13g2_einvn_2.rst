@@ -1,7 +1,7 @@
 sg13g2_einvn_2
 ==============
 
-**einvin**
+Tristate Inverter with Low-Active Enable TE_B
 
 -  **Cell name**: sg13g2_einvn_2
 -  **Type**: cell

@@ -1,7 +1,7 @@
 sg13g2_tiehi
 ============
 
-**tie1**
+Constant logic 0
 
 -  **Cell name**: sg13g2_tiehi
 -  **Type**: cell

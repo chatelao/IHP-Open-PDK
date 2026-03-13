@@ -1,7 +1,7 @@
 sg13g2_a21o_2
 =============
 
-**AO21**
+2-input AND into first input of 2-input OR.
 
 -  **Cell name**: sg13g2_a21o_2
 -  **Type**: cell

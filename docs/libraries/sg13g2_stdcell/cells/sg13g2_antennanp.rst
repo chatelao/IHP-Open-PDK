@@ -1,7 +1,7 @@
 sg13g2_antennanp
 ================
 
-**NP_ant**
+Antenna effect protection cell (gate charge) at manufacture, P-diode in N-Well, N-diode in substrate
 
 -  **Cell name**: sg13g2_antennanp
 -  **Type**: cell

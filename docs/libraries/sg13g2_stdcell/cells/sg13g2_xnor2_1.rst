@@ -1,7 +1,7 @@
 sg13g2_xnor2_1
 ==============
 
-**xnor2_1**
+2-input XNOR
 
 -  **Cell name**: sg13g2_xnor2_1
 -  **Type**: cell

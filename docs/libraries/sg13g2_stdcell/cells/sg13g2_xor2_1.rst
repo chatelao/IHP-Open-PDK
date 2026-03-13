@@ -1,7 +1,7 @@
 sg13g2_xor2_1
 =============
 
-**xor2_1**
+2-input XOR
 
 -  **Cell name**: sg13g2_xor2_1
 -  **Type**: cell

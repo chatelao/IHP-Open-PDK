@@ -1,7 +1,7 @@
 sg13g2_nor4_2
 =============
 
-**nor4**
+4-input NOR
 
 -  **Cell name**: sg13g2_nor4_2
 -  **Type**: cell

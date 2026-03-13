@@ -1,7 +1,7 @@
 sg13g2_and3_1
 =============
 
-**AND3**
+3-input AND
 
 -  **Cell name**: sg13g2_and3_1
 -  **Type**: cell

@@ -1,7 +1,7 @@
 sg13g2_nand2b_1
 ===============
 
-**nand2b1**
+2-input NAND with Inverted Input A_N
 
 -  **Cell name**: sg13g2_nand2b_1
 -  **Type**: cell

@@ -1,13 +1,13 @@
 sg13g2_dllr_1
 =============
 
-**DLLR**
+Low-Active GATE_N Two-Outputs Q Q_N D-latch with Low-Active Reset
 
 -  **Cell name**: sg13g2_dllr_1
 -  **Type**: cell
 -  **Verilog name**: sg13g2_dllr_1
 -  **Library**: sg13g2_stdcell
--  **Inputs**:  3 (D, RESET_B, GATE_N)
+-  **Inputs**:  3 (D, GATE_N, RESET_B)
 -  **Outputs**: 2 (Q, Q_N)
 
 sg13g2_dllr_1 GDSII layouts

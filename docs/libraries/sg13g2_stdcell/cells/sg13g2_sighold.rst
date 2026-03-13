@@ -1,7 +1,7 @@
 sg13g2_sighold
 ==============
 
-**keepstate**
+Leakage current compensator (bus holder)
 
 -  **Cell name**: sg13g2_sighold
 -  **Type**: cell

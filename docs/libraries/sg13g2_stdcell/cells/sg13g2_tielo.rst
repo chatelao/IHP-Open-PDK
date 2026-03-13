@@ -1,7 +1,7 @@
 sg13g2_tielo
 ============
 
-**tie0**
+Constant logic 1
 
 -  **Cell name**: sg13g2_tielo
 -  **Type**: cell
