@@ -1,0 +1,20 @@
+sg13g2_a21o_1
+=============
+
+**AO21**
+
+-  **Cell name**: sg13g2_a21o_1
+-  **Type**: cell
+-  **Verilog name**: sg13g2_a21o_1
+-  **Library**: sg13g2_stdcell
+-  **Inputs**:  3 (A1, A2, B1)
+-  **Outputs**: 1 (X)
+
+sg13g2_a21o_1 GDSII layouts
+----------------------------
+
+.. figure:: ../../../_static/images/sg13g2_a21o_1.png
+    :align: center
+    :width: 80%
+
+    sg13g2_a21o_1

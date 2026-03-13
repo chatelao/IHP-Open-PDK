@@ -1,0 +1,20 @@
+sg13g2_slgcp_1
+==============
+
+**sgclk**
+
+-  **Cell name**: sg13g2_slgcp_1
+-  **Type**: cell
+-  **Verilog name**: sg13g2_slgcp_1
+-  **Library**: sg13g2_stdcell
+-  **Inputs**:  3 (GATE, SCE, CLK)
+-  **Outputs**: 1 (GCLK)
+
+sg13g2_slgcp_1 GDSII layouts
+-----------------------------
+
+.. figure:: ../../../_static/images/sg13g2_slgcp_1.png
+    :align: center
+    :width: 80%
+
+    sg13g2_slgcp_1
