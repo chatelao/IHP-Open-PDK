@@ -10,6 +10,15 @@ Filler 2 Tracks Width
 -  **Inputs**:  0 ()
 -  **Outputs**: 0 ()
 
+sg13g2_fill_2 schematic
+-----------------------
+
+.. figure:: ../../../_static/schematics/sg13g2_fill_2.svg
+    :align: center
+    :width: 80%
+
+    sg13g2_fill_2 schematic
+
 sg13g2_fill_2 GDSII layouts
 ----------------------------
 
@@ -17,4 +26,4 @@ sg13g2_fill_2 GDSII layouts
     :align: center
     :width: 80%
 
-    sg13g2_fill_2
+    sg13g2_fill_2 layout

@@ -10,6 +10,15 @@ Antenna effect protection cell (gate charge) at manufacture, P-diode in N-Well, 
 -  **Inputs**:  1 (A)
 -  **Outputs**: 0 ()
 
+sg13g2_antennanp schematic
+--------------------------
+
+.. figure:: ../../../_static/schematics/sg13g2_antennanp.svg
+    :align: center
+    :width: 80%
+
+    sg13g2_antennanp schematic
+
 sg13g2_antennanp GDSII layouts
 -------------------------------
 
@@ -17,4 +26,4 @@ sg13g2_antennanp GDSII layouts
     :align: center
     :width: 80%
 
-    sg13g2_antennanp
+    sg13g2_antennanp layout

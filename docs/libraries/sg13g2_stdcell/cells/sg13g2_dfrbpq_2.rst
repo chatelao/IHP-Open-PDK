@@ -10,6 +10,15 @@ Posedge Single-Output Q D-Flip-Flop with Low-Active Reset
 -  **Inputs**:  3 (CLK, D, RESET_B)
 -  **Outputs**: 1 (Q)
 
+sg13g2_dfrbpq_2 schematic
+-------------------------
+
+.. figure:: ../../../_static/schematics/sg13g2_dfrbpq_2.svg
+    :align: center
+    :width: 80%
+
+    sg13g2_dfrbpq_2 schematic
+
 sg13g2_dfrbpq_2 GDSII layouts
 ------------------------------
 
@@ -17,4 +26,4 @@ sg13g2_dfrbpq_2 GDSII layouts
     :align: center
     :width: 80%
 
-    sg13g2_dfrbpq_2
+    sg13g2_dfrbpq_2 layout

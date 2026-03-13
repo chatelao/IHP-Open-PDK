@@ -10,6 +10,15 @@ Posedge Two-Outputs D-Flip-Flop with Reset, Set and Scan
 -  **Inputs**:  6 (CLK, D, RESET_B, SCD, SCE, SET_B)
 -  **Outputs**: 2 (Q, Q_N)
 
+sg13g2_sdfbbp_1 schematic
+-------------------------
+
+.. figure:: ../../../_static/schematics/sg13g2_sdfbbp_1.svg
+    :align: center
+    :width: 80%
+
+    sg13g2_sdfbbp_1 schematic
+
 sg13g2_sdfbbp_1 GDSII layouts
 ------------------------------
 
@@ -17,4 +26,4 @@ sg13g2_sdfbbp_1 GDSII layouts
     :align: center
     :width: 80%
 
-    sg13g2_sdfbbp_1
+    sg13g2_sdfbbp_1 layout

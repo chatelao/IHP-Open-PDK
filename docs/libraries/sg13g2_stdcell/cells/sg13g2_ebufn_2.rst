@@ -10,6 +10,15 @@ Tristate Buffer with Low-Active Enable TE_B
 -  **Inputs**:  2 (A, TE_B)
 -  **Outputs**: 1 (Z)
 
+sg13g2_ebufn_2 schematic
+------------------------
+
+.. figure:: ../../../_static/schematics/sg13g2_ebufn_2.svg
+    :align: center
+    :width: 80%
+
+    sg13g2_ebufn_2 schematic
+
 sg13g2_ebufn_2 GDSII layouts
 -----------------------------
 
@@ -17,4 +26,4 @@ sg13g2_ebufn_2 GDSII layouts
     :align: center
     :width: 80%
 
-    sg13g2_ebufn_2
+    sg13g2_ebufn_2 layout

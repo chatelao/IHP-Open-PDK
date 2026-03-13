@@ -10,6 +10,15 @@ Delay Cell, typical 0.4 ns
 -  **Inputs**:  1 (A)
 -  **Outputs**: 1 (X)
 
+sg13g2_dlygate4sd1_1 schematic
+------------------------------
+
+.. figure:: ../../../_static/schematics/sg13g2_dlygate4sd1_1.svg
+    :align: center
+    :width: 80%
+
+    sg13g2_dlygate4sd1_1 schematic
+
 sg13g2_dlygate4sd1_1 GDSII layouts
 -----------------------------------
 
@@ -17,4 +26,4 @@ sg13g2_dlygate4sd1_1 GDSII layouts
     :align: center
     :width: 80%
 
-    sg13g2_dlygate4sd1_1
+    sg13g2_dlygate4sd1_1 layout

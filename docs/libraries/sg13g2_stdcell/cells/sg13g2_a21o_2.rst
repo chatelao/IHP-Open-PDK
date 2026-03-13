@@ -10,6 +10,15 @@ sg13g2_a21o_2
 -  **Inputs**:  3 (A1, A2, B1)
 -  **Outputs**: 1 (X)
 
+sg13g2_a21o_2 schematic
+-----------------------
+
+.. figure:: ../../../_static/schematics/sg13g2_a21o_2.svg
+    :align: center
+    :width: 80%
+
+    sg13g2_a21o_2 schematic
+
 sg13g2_a21o_2 GDSII layouts
 ----------------------------
 
@@ -17,4 +26,4 @@ sg13g2_a21o_2 GDSII layouts
     :align: center
     :width: 80%
 
-    sg13g2_a21o_2
+    sg13g2_a21o_2 layout

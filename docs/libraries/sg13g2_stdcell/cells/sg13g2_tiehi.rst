@@ -10,6 +10,15 @@ Constant logic 0
 -  **Inputs**:  0 ()
 -  **Outputs**: 1 (L_HI)
 
+sg13g2_tiehi schematic
+----------------------
+
+.. figure:: ../../../_static/schematics/sg13g2_tiehi.svg
+    :align: center
+    :width: 80%
+
+    sg13g2_tiehi schematic
+
 sg13g2_tiehi GDSII layouts
 ---------------------------
 
@@ -17,4 +26,4 @@ sg13g2_tiehi GDSII layouts
     :align: center
     :width: 80%
 
-    sg13g2_tiehi
+    sg13g2_tiehi layout

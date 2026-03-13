@@ -110,6 +110,15 @@ def generate_rst(cell, output_dir, image_relative_path):
         f.write(f"-  **Inputs**:  {len(cell['inputs'])} ({', '.join(cell['inputs'])})\n")
         f.write(f"-  **Outputs**: {len(cell['outputs'])} ({', '.join(cell['outputs'])})\n\n")
 
+        f.write(f"{cell['name']} schematic\n")
+        f.write("-" * (len(cell['name']) + 10) + "\n\n")
+
+        schematic_name = f"{cell['name']}.svg"
+        f.write(f".. figure:: ../../../_static/schematics/{schematic_name}\n")
+        f.write("    :align: center\n")
+        f.write("    :width: 80%\n\n")
+        f.write(f"    {cell['name']} schematic\n\n")
+
         f.write(f"{cell['name']} GDSII layouts\n")
         f.write("-" * (len(cell['name']) + 15) + "\n\n")
 
@@ -117,7 +126,7 @@ def generate_rst(cell, output_dir, image_relative_path):
         f.write(f".. figure:: ../../../_static/images/{image_name}\n")
         f.write("    :align: center\n")
         f.write("    :width: 80%\n\n")
-        f.write(f"    {cell['name']}\n")
+        f.write(f"    {cell['name']} layout\n")
 
 
 def main():
@@ -138,12 +147,14 @@ def main():
     os.makedirs(image_dst_dir, exist_ok=True)
     os.makedirs(output_dir, exist_ok=True)
 
+    image_count = 0
     for cell in cells:
         generate_rst(cell, output_dir, None)
         image_name = f"{cell['name']}.png"
         src_image = os.path.join(image_src_dir, image_name)
         if os.path.exists(src_image):
             shutil.copy(src_image, os.path.join(image_dst_dir, image_name))
+            image_count += 1
 
     print(f"Generated {len(cells)} documentation files.")
     if image_count > 0:

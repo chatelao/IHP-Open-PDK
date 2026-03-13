@@ -10,6 +10,15 @@ sg13g2_nor2b_2
 -  **Inputs**:  2 (A, B_N)
 -  **Outputs**: 1 (Y)
 
+sg13g2_nor2b_2 schematic
+------------------------
+
+.. figure:: ../../../_static/schematics/sg13g2_nor2b_2.svg
+    :align: center
+    :width: 80%
+
+    sg13g2_nor2b_2 schematic
+
 sg13g2_nor2b_2 GDSII layouts
 -----------------------------
 
@@ -17,4 +26,4 @@ sg13g2_nor2b_2 GDSII layouts
     :align: center
     :width: 80%
 
-    sg13g2_nor2b_2
+    sg13g2_nor2b_2 layout

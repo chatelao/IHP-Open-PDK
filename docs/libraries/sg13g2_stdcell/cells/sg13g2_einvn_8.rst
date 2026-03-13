@@ -10,6 +10,15 @@ Tristate Inverter with Low-Active Enable TE_B
 -  **Inputs**:  2 (A, TE_B)
 -  **Outputs**: 1 (Z)
 
+sg13g2_einvn_8 schematic
+------------------------
+
+.. figure:: ../../../_static/schematics/sg13g2_einvn_8.svg
+    :align: center
+    :width: 80%
+
+    sg13g2_einvn_8 schematic
+
 sg13g2_einvn_8 GDSII layouts
 -----------------------------
 
@@ -17,4 +26,4 @@ sg13g2_einvn_8 GDSII layouts
     :align: center
     :width: 80%
 
-    sg13g2_einvn_8
+    sg13g2_einvn_8 layout
