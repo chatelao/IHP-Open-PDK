@@ -8,6 +8,8 @@ This roadmap outlines the automated generation processes for documentation, tool
 - 1.3 Set up the `nl2sch` tool required for KiCAD model generation.
 - 1.4 Configure shell environment variables and paths for PDK scripts.
 - 1.5 Ensure access to the `ihp-sg13g2/` repository structure and submodules.
+- 1.6 Install Node.js and Yosys for the algorithmic schematic generation pipeline.
+- 1.7 Install Magic and Netgen for physical verification and LVS procedures.
 
 ## 2. Standard Cell Verilog Netlist Preparation
 - 2.1 Locate the source Verilog netlist at `ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v`.
@@ -71,3 +73,31 @@ This roadmap outlines the automated generation processes for documentation, tool
 - 10.3 Calculate MD5 checksums for every identified file in the PDK scan.
 - 10.4 Format the file paths, checksums, and destinations into `ihp-sg13g2/libs.tech/openroad/export.yml`.
 - 10.5 Verify the generated YAML file against the OpenROAD-flow-scripts requirements.
+
+## 11. Algorithmic Schematic SVG Generation for Documentation
+- 11.1 Integrate Yosys to parse Verilog/SPICE netlists into an intermediate JSON format.
+- 11.2 Utilize `netlistsvg` for the programmatic generation of SVG schematic diagrams.
+- 11.3 Leverage the Eclipse Layout Kernel (ELK) via `netlistsvg` for optimal component placement.
+- 11.4 Ensure consistent signal flow (left-to-right) and minimized wire crossings in SVGs.
+- 11.5 Embed generated SVG schematics into the Sphinx-based cell documentation pages.
+
+## 12. High-Level Symbol Generation
+- 12.1 Deploy the `Symbolator` utility for macroscopic I/O port interface rendering.
+- 12.2 Parse Verilog module headers to automatically define symbol pins and labels.
+- 12.3 Generate clean, rectangular block symbols for every standard cell in the library.
+- 12.4 Validate symbol parity with the underlying HDL source code and pin definitions.
+- 12.5 Integrate `Symbolator` output into the individual cell datasheets.
+
+## 13. Physical Verification and Netlist-Driven LVS
+- 13.1 Use Magic for high-accuracy parasitic and device extraction from GDSII layouts.
+- 13.2 Generate extracted SPICE netlists including localized well taps and interconnects.
+- 13.3 Utilize Netgen for rigorous graph isomorphism comparison between layout and source.
+- 13.4 Verify topological arrangement and component parity across all electrical nodes.
+- 13.5 Establish the textual SPICE netlist as the supreme source of truth for LVS.
+
+## 14. Automated Liberty and Timing Model Generation
+- 14.1 Perform exhaustive standard cell characterization via parallelized SPICE simulations.
+- 14.2 Model propagation delay and power dissipation as functions of slew and load.
+- 14.3 Automate the assembly of Liberty (.lib) files across various process corners.
+- 14.4 Ensure structural consistency between characterization netlists and visual schematics.
+- 14.5 Validate generated timing models against OpenROAD and OpenSTA requirements.
