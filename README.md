@@ -1,7 +1,7 @@
 # IHP Open Source PDK
 130nm BiCMOS Open Source PDK, dedicated for Analog/Digital, Mixed Signal and RF Design
 
-**GitHub Pages:** [[https://gdsfactory.github.io/IHP/](https://ihp-open-pdk.readthedocs.io/)
+**GitHub Pages:** [https://gdsfactory.github.io/IHP/](https://ihp-open-pdk.readthedocs.io/)
 
 ---
 > [!WARNING]
