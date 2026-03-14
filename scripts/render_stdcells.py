@@ -22,6 +22,7 @@ def render_cells():
     # Create a LayoutView
     # In headless mode, this requires xvfb-run
     view = pya.LayoutView()
+    view.set_config('background-color', '#ffffff')
     view.show_layout(layout, False)
 
     if os.path.exists(lyp_path):
@@ -40,6 +41,7 @@ def render_cells():
 
         # Select the cell
         view.select_cell(cell.cell_index(), 0)
+        view.max_hier()
         view.zoom_fit()
 
         # Save image
