@@ -1,64 +1,78 @@
 import xml.etree.ElementTree as ET
-import os
+
 
 lyp_path = 'ihp-sg13g2/libs.tech/klayout/tech/sg13g2.lyp'
 tree = ET.parse(lyp_path)
 root = tree.getroot()
 
-# IHP Standard Colors with Alpha (70% opacity = b3)
-alpha = 'b3'
+# Map SG13G2 to SKY130 colors from COLOR_DEFINITIONS_GDS.md
 color_map = {
-    'Activ.drawing': f'#{alpha}00ff00',
-    'GatPoly.drawing': f'#{alpha}bf4026',
-    'Metal1.drawing': f'#{alpha}39bfff',
-    'Metal2.drawing': f'#{alpha}ccccd9',
-    'Metal3.drawing': f'#{alpha}d80000',
-    'Metal4.drawing': f'#{alpha}93e837',
-    'Metal5.drawing': f'#{alpha}dcd146',
-    'TopMetal1.drawing': f'#{alpha}ffe6bf',
-    'TopMetal2.drawing': f'#{alpha}ff8000',
-    'Cont.drawing': f'#{alpha}00ffff',
-    'Via1.drawing': f'#{alpha}ccccff',
-    'Via2.drawing': f'#{alpha}ff3736',
-    'Via3.drawing': f'#{alpha}9ba940',
-    'Via4.drawing': f'#{alpha}deac5e',
-    'TopVia1.drawing': f'#{alpha}ffe6bf',
-    'TopVia2.drawing': f'#{alpha}ff8000',
-    'NWell.drawing': f'#66268c6b',
-    'pSD.drawing': f'#66ccb899',
-    'nSD.drawing': f'#6600cc66',
+    'Activ': '#7e00de00',      # diff: #00de00, 49.6% alpha
+    'GatPoly': '#7ec8741a',    # poly: #c8741a, 49.6% alpha
+    'Cont': '#f1ec0000',       # licon: #ec0000, 94.5% alpha
+    'Metal1': '#a12e80ff',     # li1: #2e80ff, 63.0% alpha
+    'Via1': '#f1a40000',       # mcon: #a40000, 94.5% alpha
+    'Metal2': '#a1b066f0',     # met1: #b066f0, 63.0% alpha
+    'Via2': '#f1863a00',       # via: #863a00, 94.5% alpha
+    'Metal3': '#f10060ff',     # met2: #0060ff, 94.5% alpha
+    'NWell': '#28ffff00',      # nwell: #ffff00, 15.7% alpha
 }
 
-target_layers = list(color_map.keys())
-
+# Apply to all layers
 for prop in root.findall('properties'):
     name_elem = prop.find('name')
-    if name_elem is not None and name_elem.text in target_layers:
-        name = name_elem.text
+    if name_elem is not None and name_elem.text:
+        full_name = name_elem.text
 
+        # Set all visible layers to solid fill (I18 refers to 'full' pattern in this lyp)
         dither = prop.find('dither-pattern')
         if dither is not None:
-            dither.text = 'I1'
+            dither.text = 'I18'
 
-        fill_color = prop.find('fill-color')
-        if fill_color is not None:
-            fill_color.text = color_map[name]
+        # Set all line styles to solid (C0 refers to 'solid')
+        line = prop.find('line-style')
+        if line is not None:
+            line.text = 'C0'
 
-        frame_color = prop.find('frame-color')
-        if frame_color is not None:
-            frame_color.text = '#' + color_map[name][3:]
+        # Match layer base name for color assignment
+        base_name = full_name.split('.')[0]
+        if base_name in color_map:
+            color = color_map[base_name]
 
-        transparent = prop.find('transparent')
-        if transparent is not None:
-            transparent.text = 'false'
+            fill_color = prop.find('fill-color')
+            if fill_color is not None:
+                fill_color.text = color
 
-# Ensure Substrate.drawing is visible if it was hidden, but keep it white
+            frame_color = prop.find('frame-color')
+            if frame_color is not None:
+                # Frame color is just the RGB part (no alpha)
+                frame_color.text = '#' + color[3:]
+
+            transparent = prop.find('transparent')
+            if transparent is not None:
+                transparent.text = 'false'
+        else:
+            # For other layers, ensure they are solid
+            transparent = prop.find('transparent')
+            if transparent is not None:
+                transparent.text = 'false'
+
+# Ensure Substrate.drawing is visible if it was hidden, but keep it white and solid
 for prop in root.findall('properties'):
     name_elem = prop.find('name')
     if name_elem is not None and name_elem.text == 'Substrate.drawing':
         visible = prop.find('visible')
         if visible is not None:
             visible.text = 'true'
+        fill = prop.find('fill-color')
+        if fill is not None:
+            fill.text = '#ffffff'
+        frame = prop.find('frame-color')
+        if frame is not None:
+            frame.text = '#ffffff'
+        dither = prop.find('dither-pattern')
+        if dither is not None:
+            dither.text = 'I18'
 
 xml_str = ET.tostring(root, encoding='unicode')
 
