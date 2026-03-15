@@ -23,6 +23,8 @@ def render_cells():
     # In headless mode, this requires xvfb-run
     view = pya.LayoutView()
     view.set_config('background-color', '#ffffff')
+    view.set_config('grid-visible', 'false')
+    view.set_config('text-visible', 'false')
     view.show_layout(layout, False)
 
     if os.path.exists(lyp_path):
@@ -46,7 +48,7 @@ def render_cells():
 
         # Save image
         image_path = os.path.join(output_dir, f"{cell_name}.png")
-        view.save_image(image_path, 800, 600)
+        view.save_image(image_path, 2000, 1500)
 
     print("Rendering complete.")
 
