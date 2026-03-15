@@ -10,6 +10,15 @@ Posedge Two-Outputs Q and Q_N D-Flip-Flop with Reset and Scan
 -  **Inputs**:  5 (CLK, D, RESET_B, SCD, SCE)
 -  **Outputs**: 2 (Q, Q_N)
 
+sg13g2_sdfrbp_1 symbol
+----------------------
+
+.. figure:: ../../../_static/symbols/sg13g2_sdfrbp_1.svg
+    :align: center
+    :width: 60%
+
+    sg13g2_sdfrbp_1 symbol
+
 sg13g2_sdfrbp_1 schematic
 -------------------------
 

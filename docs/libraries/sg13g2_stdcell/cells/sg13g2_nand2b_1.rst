@@ -10,6 +10,15 @@ sg13g2_nand2b_1
 -  **Inputs**:  2 (A_N, B)
 -  **Outputs**: 1 (Y)
 
+sg13g2_nand2b_1 symbol
+----------------------
+
+.. figure:: ../../../_static/symbols/sg13g2_nand2b_1.svg
+    :align: center
+    :width: 60%
+
+    sg13g2_nand2b_1 symbol
+
 sg13g2_nand2b_1 schematic
 -------------------------
 

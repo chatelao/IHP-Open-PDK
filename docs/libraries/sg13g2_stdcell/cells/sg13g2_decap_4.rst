@@ -10,6 +10,15 @@ Decoupling capasitance filler cell
 -  **Inputs**:  0 ()
 -  **Outputs**: 0 ()
 
+sg13g2_decap_4 symbol
+---------------------
+
+.. figure:: ../../../_static/symbols/sg13g2_decap_4.svg
+    :align: center
+    :width: 60%
+
+    sg13g2_decap_4 symbol
+
 sg13g2_decap_4 schematic
 ------------------------
 

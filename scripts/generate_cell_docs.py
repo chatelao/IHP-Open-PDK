@@ -110,6 +110,15 @@ def generate_rst(cell, output_dir, image_relative_path):
         f.write(f"-  **Inputs**:  {len(cell['inputs'])} ({', '.join(cell['inputs'])})\n")
         f.write(f"-  **Outputs**: {len(cell['outputs'])} ({', '.join(cell['outputs'])})\n\n")
 
+        f.write(f"{cell['name']} symbol\n")
+        f.write("-" * (len(cell['name']) + 7) + "\n\n")
+
+        symbol_name = f"{cell['name']}.svg"
+        f.write(f".. figure:: ../../../_static/symbols/{symbol_name}\n")
+        f.write("    :align: center\n")
+        f.write("    :width: 60%\n\n")
+        f.write(f"    {cell['name']} symbol\n\n")
+
         f.write(f"{cell['name']} schematic\n")
         f.write("-" * (len(cell['name']) + 10) + "\n\n")
 

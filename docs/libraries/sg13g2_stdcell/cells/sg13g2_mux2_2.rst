@@ -10,6 +10,15 @@ Multiplexer from 2 to 1
 -  **Inputs**:  3 (A0, A1, S)
 -  **Outputs**: 1 (X)
 
+sg13g2_mux2_2 symbol
+--------------------
+
+.. figure:: ../../../_static/symbols/sg13g2_mux2_2.svg
+    :align: center
+    :width: 60%
+
+    sg13g2_mux2_2 symbol
+
 sg13g2_mux2_2 schematic
 -----------------------
 

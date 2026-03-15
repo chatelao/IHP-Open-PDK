@@ -10,6 +10,15 @@ Tristate Buffer with Low-Active Enable TE_B
 -  **Inputs**:  2 (A, TE_B)
 -  **Outputs**: 1 (Z)
 
+sg13g2_ebufn_2 symbol
+---------------------
+
+.. figure:: ../../../_static/symbols/sg13g2_ebufn_2.svg
+    :align: center
+    :width: 60%
+
+    sg13g2_ebufn_2 symbol
+
 sg13g2_ebufn_2 schematic
 ------------------------
 

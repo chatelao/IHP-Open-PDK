@@ -10,6 +10,15 @@ Filler 8 Tracks Width
 -  **Inputs**:  0 ()
 -  **Outputs**: 0 ()
 
+sg13g2_fill_8 symbol
+--------------------
+
+.. figure:: ../../../_static/symbols/sg13g2_fill_8.svg
+    :align: center
+    :width: 60%
+
+    sg13g2_fill_8 symbol
+
 sg13g2_fill_8 schematic
 -----------------------
 

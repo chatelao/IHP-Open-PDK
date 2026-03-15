@@ -10,6 +10,15 @@ Low-Active GATE_N Single-Output Q D-latch with Low-Active Reset
 -  **Inputs**:  3 (D, GATE_N, RESET_B)
 -  **Outputs**: 1 (Q)
 
+sg13g2_dllrq_1 symbol
+---------------------
+
+.. figure:: ../../../_static/symbols/sg13g2_dllrq_1.svg
+    :align: center
+    :width: 60%
+
+    sg13g2_dllrq_1 symbol
+
 sg13g2_dllrq_1 schematic
 ------------------------
 
