@@ -30,10 +30,12 @@ These colors are automatically applied during the documentation build process wh
 
 1.  **Rendering Script:** `scripts/render_stdcells.py` uses the KLayout Python API (`pya`).
 2.  **Configuration:** The script loads the `.lyp` file using `view.load_layer_props(lyp_path)`.
-3.  **Visualization:** To ensure clean images for documentation, the script explicitly disables the grid and text labels:
+3.  **Visualization:** To ensure clean images for documentation, the script explicitly disables the grid and text labels, and enables alpha blending with solid fills (no stipple):
     ```python
     view.set_config('background-color', '#ffffff')
     view.set_config('grid-visible', 'false')
     view.set_config('text-visible', 'false')
+    view.set_config('alpha-blending', 'true')
+    view.set_config('no-stipple', 'true')
     ```
 4.  **Standard Cell Docs:** The `scripts/generate_cell_docs.py` script then integrates these rendered images into the Sphinx-based documentation.
