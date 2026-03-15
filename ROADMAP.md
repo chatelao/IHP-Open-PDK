@@ -89,11 +89,11 @@ This roadmap outlines the automated generation processes for documentation, tool
 - [x] 12.5 Integrate `Symbolator` output into the individual cell datasheets.
 
 ## 13. Physical Verification and Netlist-Driven LVS
-- [ ] 13.1 Use Magic for high-accuracy parasitic and device extraction from GDSII layouts.
-- [ ] 13.2 Generate extracted SPICE netlists including localized well taps and interconnects.
-- [ ] 13.3 Utilize Netgen for rigorous graph isomorphism comparison between layout and source.
-- [ ] 13.4 Verify topological arrangement and component parity across all electrical nodes.
-- [ ] 13.5 Establish the textual SPICE netlist as the supreme source of truth for LVS.
+- [x] 13.1 Use Magic for high-accuracy parasitic and device extraction from GDSII layouts.
+- [x] 13.2 Generate extracted SPICE netlists including localized well taps and interconnects.
+- [x] 13.3 Utilize Netgen for rigorous graph isomorphism comparison between layout and source.
+- [x] 13.4 Verify topological arrangement and component parity across all electrical nodes.
+- [x] 13.5 Establish the textual SPICE netlist as the supreme source of truth for LVS.
 
 ## 14. Automated Liberty and Timing Model Generation
 - [ ] 14.1 Perform exhaustive standard cell characterization via parallelized SPICE simulations.

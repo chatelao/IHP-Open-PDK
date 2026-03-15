@@ -103,3 +103,21 @@ test-SVS-cell: env
 test-LVS-switch: env
 	@. $(VENV_RUN_COMMAND); echo "Running Klayout-LVS switch test"
 	@. $(VENV_RUN_COMMAND); cd $(KLAYOUT_LVS_TESTS) && make test-LVS-switch
+
+#=================================
+# ----- test-LVS-magic -----------
+#=================================
+
+.ONESHELL:
+test-LVS-magic-%: env
+	@. $(VENV_RUN_COMMAND); echo "Running Magic-based LVS for $*"
+	@. $(VENV_RUN_COMMAND); python3 scripts/run_magic_lvs.py --cell $* --run_dir lvs_magic_$*
+
+.ONESHELL:
+test-LVS-magic-cells: env
+	@. $(VENV_RUN_COMMAND); \
+	cells=$$(cat ihp-sg13g2/libs.ref/sg13g2_stdcell/doc/sg13g2_stdcell.celllist); \
+	for cell in $$cells; do \
+		echo "Running Magic LVS for $$cell"; \
+		python3 scripts/run_magic_lvs.py --cell $$cell --run_dir lvs_magic_$$cell || echo "LVS failed for $$cell"; \
+	done
