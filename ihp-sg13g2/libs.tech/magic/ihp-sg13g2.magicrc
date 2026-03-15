@@ -55,7 +55,7 @@ source [file dirname [file normalize [info script]]]/ihp-sg13g2.tcl
 # source [file dirname [file normalize [info script]]]/ihp-sg13g2-BindKeys
 
 # set units to microns
-units microns
+catch {units microns}
 
 # set sg13g2 standard power, ground, and substrate names
 set VDD VDD
