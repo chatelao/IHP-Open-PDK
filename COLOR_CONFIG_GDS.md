@@ -6,21 +6,19 @@ The colors used for rendering GDS layout images in this documentation are define
 
 ## Layer Color Mapping
 
-The following table lists the common layers used in standard cell layouts and their corresponding colors as defined in the PDK's KLayout technology profile.
+The following table lists the common layers used in standard cell layouts and their corresponding colors as defined in the PDK's KLayout technology profile, updated with SKY130-inspired colors.
 
 | Layer Name | GDS Source | Frame Color | Fill Color | Transparency (Alpha) |
 | :--- | :--- | :--- | :--- | :--- |
-| **Activ.drawing** | 1/0 | `#00ff00` | `#b300ff00` | 70% |
-| **GatPoly.drawing** | 5/0 | `#bf4026` | `#b3bf4026` | 70% |
-| **Cont.drawing** | 6/0 | `#00ffff` | `#b300ffff` | 70% |
-| **nSD.drawing** | 7/0 | `#00cc66` | `#6600cc66` | 40% |
-| **pSD.drawing** | 14/0 | `#ccb899` | `#66ccb899` | 40% |
-| **Metal1.drawing** | 8/0 | `#39bfff` | `#b339bfff` | 70% |
-| **Metal2.drawing** | 10/0 | `#ccccd9` | `#b3ccccd9` | 70% |
-| **Metal3.drawing** | 30/0 | `#d80000` | `#b3d80000` | 70% |
-| **NWell.drawing** | 31/0 | `#268c6b` | `#66268c6b` | 40% |
-| **Via1.drawing** | 19/0 | `#ccccff` | `#b3ccccff` | 70% |
-| **Via2.drawing** | 29/0 | `#ff3736` | `#b3ff3736` | 70% |
+| **Activ.drawing** | 1/0 | `#00de00` | `#7e00de00` | 49.6% |
+| **GatPoly.drawing** | 5/0 | `#c8741a` | `#7ec8741a` | 49.6% |
+| **Cont.drawing** | 6/0 | `#ec0000` | `#f1ec0000` | 94.5% |
+| **Metal1.drawing** | 8/0 | `#2e80ff` | `#a12e80ff` | 63.0% |
+| **Metal2.drawing** | 10/0 | `#b066f0` | `#a1b066f0` | 63.0% |
+| **Metal3.drawing** | 30/0 | `#0060ff` | `#f10060ff` | 94.5% |
+| **NWell.drawing** | 31/0 | `#ffff00` | `#28ffff00` | 15.7% |
+| **Via1.drawing** | 19/0 | `#a40000` | `#f1a40000` | 94.5% |
+| **Via2.drawing** | 29/0 | `#863a00` | `#f1863a00` | 94.5% |
 | **DigiBnd.drawing** | 16/0 | `#ff0000` | `#ff0000` | 100% |
 | **prBoundary.drawing** | 189/0 | `#9900e6` | `#9900e6` | 100% |
 
