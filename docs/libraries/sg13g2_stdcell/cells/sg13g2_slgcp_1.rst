@@ -10,6 +10,15 @@ Scan gated clock
 -  **Inputs**:  3 (GATE, CLK, SCE)
 -  **Outputs**: 1 (GCLK)
 
+sg13g2_slgcp_1 symbol
+---------------------
+
+.. figure:: ../../../_static/symbols/sg13g2_slgcp_1.svg
+    :align: center
+    :width: 60%
+
+    sg13g2_slgcp_1 symbol
+
 sg13g2_slgcp_1 schematic
 ------------------------
 

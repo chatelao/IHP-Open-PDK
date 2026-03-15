@@ -10,6 +10,15 @@ sg13g2_nor2b_2
 -  **Inputs**:  2 (A, B_N)
 -  **Outputs**: 1 (Y)
 
+sg13g2_nor2b_2 symbol
+---------------------
+
+.. figure:: ../../../_static/symbols/sg13g2_nor2b_2.svg
+    :align: center
+    :width: 60%
+
+    sg13g2_nor2b_2 symbol
+
 sg13g2_nor2b_2 schematic
 ------------------------
 

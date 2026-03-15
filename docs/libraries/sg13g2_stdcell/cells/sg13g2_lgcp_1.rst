@@ -10,6 +10,15 @@ Posedge Clock Gating cell, Low Latch Enable
 -  **Inputs**:  2 (CLK, GATE)
 -  **Outputs**: 1 (GCLK)
 
+sg13g2_lgcp_1 symbol
+--------------------
+
+.. figure:: ../../../_static/symbols/sg13g2_lgcp_1.svg
+    :align: center
+    :width: 60%
+
+    sg13g2_lgcp_1 symbol
+
 sg13g2_lgcp_1 schematic
 -----------------------
 

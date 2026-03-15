@@ -10,6 +10,15 @@ Buffer drive strength 8
 -  **Inputs**:  1 (A)
 -  **Outputs**: 1 (X)
 
+sg13g2_buf_8 symbol
+-------------------
+
+.. figure:: ../../../_static/symbols/sg13g2_buf_8.svg
+    :align: center
+    :width: 60%
+
+    sg13g2_buf_8 symbol
+
 sg13g2_buf_8 schematic
 ----------------------
 

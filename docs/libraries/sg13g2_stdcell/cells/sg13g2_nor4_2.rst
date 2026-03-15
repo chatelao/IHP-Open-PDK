@@ -10,6 +10,15 @@ sg13g2_nor4_2
 -  **Inputs**:  4 (A, B, C, D)
 -  **Outputs**: 1 (Y)
 
+sg13g2_nor4_2 symbol
+--------------------
+
+.. figure:: ../../../_static/symbols/sg13g2_nor4_2.svg
+    :align: center
+    :width: 60%
+
+    sg13g2_nor4_2 symbol
+
 sg13g2_nor4_2 schematic
 -----------------------
 

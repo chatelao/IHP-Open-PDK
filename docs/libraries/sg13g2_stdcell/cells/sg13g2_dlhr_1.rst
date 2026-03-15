@@ -10,6 +10,15 @@ High-Active GATE Two-Outputs Q Q_N D-latch with Low-Active Reset
 -  **Inputs**:  3 (D, GATE, RESET_B)
 -  **Outputs**: 2 (Q, Q_N)
 
+sg13g2_dlhr_1 symbol
+--------------------
+
+.. figure:: ../../../_static/symbols/sg13g2_dlhr_1.svg
+    :align: center
+    :width: 60%
+
+    sg13g2_dlhr_1 symbol
+
 sg13g2_dlhr_1 schematic
 -----------------------
 

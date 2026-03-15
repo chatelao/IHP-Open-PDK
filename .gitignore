@@ -196,7 +196,8 @@ cliff*toml
 
 # Generated documentation artifacts
 rendered_cells/
-docs/_static/images/*.png
+docs/_static/images/
+docs/_static/symbols/
 docs/libraries/sg13g2_stdcell/cells/
 
 # Virtual environments

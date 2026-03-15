@@ -10,6 +10,15 @@ Inverter
 -  **Inputs**:  1 (A)
 -  **Outputs**: 1 (Y)
 
+sg13g2_inv_2 symbol
+-------------------
+
+.. figure:: ../../../_static/symbols/sg13g2_inv_2.svg
+    :align: center
+    :width: 60%
+
+    sg13g2_inv_2 symbol
+
 sg13g2_inv_2 schematic
 ----------------------
 

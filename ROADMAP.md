@@ -82,11 +82,11 @@ This roadmap outlines the automated generation processes for documentation, tool
 - [x] 11.5 Embed generated SVG schematics into the Sphinx-based cell documentation pages.
 
 ## 12. High-Level Symbol Generation
-- [ ] 12.1 Deploy the `Symbolator` utility for macroscopic I/O port interface rendering.
-- [ ] 12.2 Parse Verilog module headers to automatically define symbol pins and labels.
-- [ ] 12.3 Generate clean, rectangular block symbols for every standard cell in the library.
-- [ ] 12.4 Validate symbol parity with the underlying HDL source code and pin definitions.
-- [ ] 12.5 Integrate `Symbolator` output into the individual cell datasheets.
+- [x] 12.1 Deploy the `Symbolator` utility for macroscopic I/O port interface rendering.
+- [x] 12.2 Parse Verilog module headers to automatically define symbol pins and labels.
+- [x] 12.3 Generate clean, rectangular block symbols for every standard cell in the library.
+- [x] 12.4 Validate symbol parity with the underlying HDL source code and pin definitions.
+- [x] 12.5 Integrate `Symbolator` output into the individual cell datasheets.
 
 ## 13. Physical Verification and Netlist-Driven LVS
 - [ ] 13.1 Use Magic for high-accuracy parasitic and device extraction from GDSII layouts.

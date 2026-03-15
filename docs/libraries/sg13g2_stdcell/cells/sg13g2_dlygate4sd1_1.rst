@@ -10,6 +10,15 @@ Delay Cell, typical 0.4 ns
 -  **Inputs**:  1 (A)
 -  **Outputs**: 1 (X)
 
+sg13g2_dlygate4sd1_1 symbol
+---------------------------
+
+.. figure:: ../../../_static/symbols/sg13g2_dlygate4sd1_1.svg
+    :align: center
+    :width: 60%
+
+    sg13g2_dlygate4sd1_1 symbol
+
 sg13g2_dlygate4sd1_1 schematic
 ------------------------------
 

@@ -10,6 +10,15 @@ Constant logic 0
 -  **Inputs**:  0 ()
 -  **Outputs**: 1 (L_HI)
 
+sg13g2_tiehi symbol
+-------------------
+
+.. figure:: ../../../_static/symbols/sg13g2_tiehi.svg
+    :align: center
+    :width: 60%
+
+    sg13g2_tiehi symbol
+
 sg13g2_tiehi schematic
 ----------------------
 
