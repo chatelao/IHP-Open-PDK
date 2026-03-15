@@ -24,10 +24,10 @@ for prop in root.findall('properties'):
     if name_elem is not None and name_elem.text:
         full_name = name_elem.text
 
-        # Set all visible layers to solid fill (I18 refers to 'full' pattern in this lyp)
+        # Set all visible layers to solid fill (I1 is the standard internal solid pattern)
         dither = prop.find('dither-pattern')
         if dither is not None:
-            dither.text = 'I18'
+            dither.text = 'I1'
 
         # Set all line styles to solid (C0 refers to 'solid')
         line = prop.find('line-style')
@@ -72,7 +72,7 @@ for prop in root.findall('properties'):
             frame.text = '#ffffff'
         dither = prop.find('dither-pattern')
         if dither is not None:
-            dither.text = 'I18'
+            dither.text = 'I1'
 
 xml_str = ET.tostring(root, encoding='unicode')
 

@@ -26,7 +26,7 @@ def render_cells():
     view.set_config('grid-visible', 'false')
     view.set_config('text-visible', 'false')
     view.set_config('alpha-blending', 'true')
-    view.set_config('no-stipple', 'true')
+    view.set_config('no-stipple', 'false')
     view.show_layout(layout, False)
 
     if os.path.exists(lyp_path):
