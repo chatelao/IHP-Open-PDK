@@ -3,30 +3,14 @@ sg13g2_sighold
 
 Leakage current compensator (bus holder)
 
--  **Cell name**: sg13g2_sighold
+-  **Group name**: sg13g2_sighold
 -  **Type**: cell
--  **Verilog name**: sg13g2_sighold
 -  **Library**: sg13g2_stdcell
 -  **Inputs**:  0 ()
 -  **Outputs**: 0 ()
 
-Electrical and Physical Data
-----------------------------
-
--  **Area**: 9.072 µm²
--  **Pin Capacitance**:
-
-   .. list-table::
-      :widths: 50 50
-      :header-rows: 1
-
-      * - Pin
-        - Capacitance (pF)
-      * - SH
-        - 0.0181867
-
-sg13g2_sighold symbol
----------------------
+sg13g2_sighold symbols
+----------------------
 
 .. figure:: ../../../_static/symbols/sg13g2_sighold.svg
     :align: center
@@ -45,6 +29,21 @@ sg13g2_sighold schematic
 
 sg13g2_sighold GDSII layouts
 -----------------------------
+
+sg13g2_sighold
+~~~~~~~~~~~~~~
+
+-  **Area**: 9.072 µm²
+-  **Pin Capacitance**:
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Pin
+        - Capacitance (pF)
+      * - SH
+        - 0.0181867
 
 .. figure:: ../../../_static/images/sg13g2_sighold.png
     :align: center
