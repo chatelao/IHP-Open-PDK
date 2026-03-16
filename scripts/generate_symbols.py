@@ -10,11 +10,11 @@ repo_root = os.path.abspath(os.path.join(script_dir, ".."))
 sys.path.append(os.path.join(repo_root, "symbolator"))
 sys.path.append(os.path.join(repo_root, "hdlparse"))
 
-from symbolator import make_symbol, HdlSymbol, DrawStyle
-from nucanvas import NuCanvas
+from symbolator import make_symbol, HdlSymbol
+from nucanvas.nucanvas import NuCanvas, DrawStyle
 from nucanvas.svg_backend import SvgSurface
 from nucanvas.shapes import PathShape, OvalShape
-from hdlparse import verilog_parser as vlog
+from hdlparse.verilog_parser import VerilogExtractor, VerilogParameter
 
 def generate_symbols():
     verilog_path = os.path.join(repo_root, "ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v")
@@ -24,7 +24,7 @@ def generate_symbols():
         os.makedirs(output_dir)
 
     print(f"Parsing Verilog: {verilog_path}")
-    vlog_ex = vlog.VerilogExtractor()
+    vlog_ex = VerilogExtractor()
     components = vlog_ex.extract_objects(verilog_path)
     print(f"Found {len(components)} components.")
 
@@ -50,6 +50,17 @@ def generate_symbols():
                   (0, 0), 'auto', None)
 
     for comp in components:
+        # Inject power and bias pins
+        # comp.ports is a list in older hdlparse but odict_values in newer?
+        # Let's check the type and handle accordingly
+        if not isinstance(comp.ports, list):
+            comp.ports = list(comp.ports)
+
+        comp.ports.append(VerilogParameter('VPWR', 'input', 'wire'))
+        comp.ports.append(VerilogParameter('VPB', 'input', 'wire'))
+        comp.ports.append(VerilogParameter('VGND', 'input', 'wire'))
+        comp.ports.append(VerilogParameter('VNB', 'input', 'wire'))
+
         fname = os.path.join(output_dir, f"{comp.name}.svg")
         print(f"Generating symbol for {comp.name} -> {fname}")
 
