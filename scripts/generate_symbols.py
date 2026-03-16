@@ -56,8 +56,11 @@ def generate_symbols():
         if not isinstance(comp.ports, list):
             comp.ports = list(comp.ports)
 
-        comp.ports.append(VerilogParameter('VPWR', 'input', 'wire'))
+        num_orig_ports = len(comp.ports)
+        comp.sections = {0: 'data | Data Signals', num_orig_ports: 'power | Power'}
+
         comp.ports.append(VerilogParameter('VPB', 'input', 'wire'))
+        comp.ports.append(VerilogParameter('VPWR', 'input', 'wire'))
         comp.ports.append(VerilogParameter('VGND', 'input', 'wire'))
         comp.ports.append(VerilogParameter('VNB', 'input', 'wire'))
 
@@ -68,7 +71,8 @@ def generate_symbols():
         nc.set_surface(surf)
         nc.clear_shapes()
 
-        sym = make_symbol(comp, vlog_ex, title=False, no_type=True)
+        sym = make_symbol(comp, vlog_ex, title=True, no_type=True)
+        sym.library = "sg13g2_stdcell"
         sym.draw(0, 0, nc)
         nc.render()
 
