@@ -3,30 +3,14 @@ sg13g2_tiehi
 
 Constant logic 0
 
--  **Cell name**: sg13g2_tiehi
+-  **Group name**: sg13g2_tiehi
 -  **Type**: cell
--  **Verilog name**: sg13g2_tiehi
 -  **Library**: sg13g2_stdcell
 -  **Inputs**:  0 ()
 -  **Outputs**: 1 (L_HI)
 
-Electrical and Physical Data
-----------------------------
-
--  **Area**: 7.2576 µm²
--  **Pin Capacitance**:
-
-   .. list-table::
-      :widths: 50 50
-      :header-rows: 1
-
-      * - Pin
-        - Capacitance (pF)
-      * - L_HI
-        - 0
-
-sg13g2_tiehi symbol
--------------------
+sg13g2_tiehi symbols
+--------------------
 
 .. figure:: ../../../_static/symbols/sg13g2_tiehi.svg
     :align: center
@@ -45,6 +29,21 @@ sg13g2_tiehi schematic
 
 sg13g2_tiehi GDSII layouts
 ---------------------------
+
+sg13g2_tiehi
+~~~~~~~~~~~~
+
+-  **Area**: 7.2576 µm²
+-  **Pin Capacitance**:
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Pin
+        - Capacitance (pF)
+      * - L_HI
+        - 0
 
 .. figure:: ../../../_static/images/sg13g2_tiehi.png
     :align: center

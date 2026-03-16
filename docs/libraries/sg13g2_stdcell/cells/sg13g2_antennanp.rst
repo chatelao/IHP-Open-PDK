@@ -3,30 +3,14 @@ sg13g2_antennanp
 
 Antenna effect protection cell (gate charge) at manufacture, P-diode in N-Well, N-diode in substrate
 
--  **Cell name**: sg13g2_antennanp
+-  **Group name**: sg13g2_antennanp
 -  **Type**: cell
--  **Verilog name**: sg13g2_antennanp
 -  **Library**: sg13g2_stdcell
 -  **Inputs**:  1 (A)
 -  **Outputs**: 0 ()
 
-Electrical and Physical Data
-----------------------------
-
--  **Area**: 5.4432 µm²
--  **Pin Capacitance**:
-
-   .. list-table::
-      :widths: 50 50
-      :header-rows: 1
-
-      * - Pin
-        - Capacitance (pF)
-      * - A
-        - 0.0010804
-
-sg13g2_antennanp symbol
------------------------
+sg13g2_antennanp symbols
+------------------------
 
 .. figure:: ../../../_static/symbols/sg13g2_antennanp.svg
     :align: center
@@ -45,6 +29,21 @@ sg13g2_antennanp schematic
 
 sg13g2_antennanp GDSII layouts
 -------------------------------
+
+sg13g2_antennanp
+~~~~~~~~~~~~~~~~
+
+-  **Area**: 5.4432 µm²
+-  **Pin Capacitance**:
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Pin
+        - Capacitance (pF)
+      * - A
+        - 0.0010804
 
 .. figure:: ../../../_static/images/sg13g2_antennanp.png
     :align: center

@@ -150,67 +150,71 @@ def parse_verilog(verilog_path):
     return cells
 
 
-def generate_rst(cell, output_dir, lib_data=None):
+def generate_rst(group_name, group_cells, output_dir, lib_data=None):
     os.makedirs(output_dir, exist_ok=True)
-    rst_path = os.path.join(output_dir, f"{cell['name']}.rst")
+    rst_path = os.path.join(output_dir, f"{group_name}.rst")
+
+    # Use the first cell as representative for the group description and symbols
+    rep_cell = group_cells[0]
 
     with open(rst_path, 'w') as f:
-        f.write(f"{cell['name']}\n")
-        f.write("=" * len(cell['name']) + "\n\n")
+        f.write(f"{group_name}\n")
+        f.write("=" * len(group_name) + "\n\n")
 
-        if cell['description']:
-            f.write(f"{cell['description']}\n\n")
+        if rep_cell['description']:
+            f.write(f"{rep_cell['description']}\n\n")
 
-        f.write(f"-  **Cell name**: {cell['name']}\n")
+        f.write(f"-  **Group name**: {group_name}\n")
         f.write("-  **Type**: cell\n")
-        f.write(f"-  **Verilog name**: {cell['name']}\n")
         f.write("-  **Library**: sg13g2_stdcell\n")
-        f.write(f"-  **Inputs**:  {len(cell['inputs'])} ({', '.join(cell['inputs'])})\n")
-        f.write(f"-  **Outputs**: {len(cell['outputs'])} ({', '.join(cell['outputs'])})\n\n")
+        f.write(f"-  **Inputs**:  {len(rep_cell['inputs'])} ({', '.join(rep_cell['inputs'])})\n")
+        f.write(f"-  **Outputs**: {len(rep_cell['outputs'])} ({', '.join(rep_cell['outputs'])})\n\n")
 
-        if lib_data and cell['name'] in lib_data:
-            data = lib_data[cell['name']]
-            f.write("Electrical and Physical Data\n")
-            f.write("-" * 28 + "\n\n")
-            f.write(f"-  **Area**: {data['area']} µm²\n")
-            if data['pins_cap']:
-                f.write("-  **Pin Capacitance**:\n\n")
-                f.write("   .. list-table::\n")
-                f.write("      :widths: 50 50\n")
-                f.write("      :header-rows: 1\n\n")
-                f.write("      * - Pin\n")
-                f.write("        - Capacitance (pF)\n")
-                for pin, cap in sorted(data['pins_cap'].items()):
-                    f.write(f"      * - {pin}\n")
-                    f.write(f"        - {cap}\n")
-            f.write("\n")
+        f.write(f"{group_name} symbols\n")
+        f.write("-" * (len(group_name) + 8) + "\n\n")
 
-        f.write(f"{cell['name']} symbol\n")
-        f.write("-" * (len(cell['name']) + 7) + "\n\n")
-
-        symbol_name = f"{cell['name']}.svg"
+        symbol_name = f"{rep_cell['name']}.svg"
         f.write(f".. figure:: ../../../_static/symbols/{symbol_name}\n")
         f.write("    :align: center\n")
         f.write("    :width: 60%\n\n")
-        f.write(f"    {cell['name']} symbol\n\n")
+        f.write(f"    {group_name} symbol\n\n")
 
-        f.write(f"{cell['name']} schematic\n")
-        f.write("-" * (len(cell['name']) + 10) + "\n\n")
+        f.write(f"{group_name} schematic\n")
+        f.write("-" * (len(group_name) + 10) + "\n\n")
 
-        schematic_name = f"{cell['name']}.svg"
+        schematic_name = f"{rep_cell['name']}.svg"
         f.write(f".. figure:: ../../../_static/schematics/{schematic_name}\n")
         f.write("    :align: center\n")
         f.write("    :width: 80%\n\n")
-        f.write(f"    {cell['name']} schematic\n\n")
+        f.write(f"    {group_name} schematic\n\n")
 
-        f.write(f"{cell['name']} GDSII layouts\n")
-        f.write("-" * (len(cell['name']) + 15) + "\n\n")
+        f.write(f"{group_name} GDSII layouts\n")
+        f.write("-" * (len(group_name) + 15) + "\n\n")
 
-        image_name = f"{cell['name']}.png"
-        f.write(f".. figure:: ../../../_static/images/{image_name}\n")
-        f.write("    :align: center\n")
-        f.write("    :width: 80%\n\n")
-        f.write(f"    {cell['name']} layout\n")
+        for cell in group_cells:
+            f.write(f"{cell['name']}\n")
+            f.write("~" * len(cell['name']) + "\n\n")
+
+            if lib_data and cell['name'] in lib_data:
+                data = lib_data[cell['name']]
+                f.write(f"-  **Area**: {data['area']} µm²\n")
+                if data['pins_cap']:
+                    f.write("-  **Pin Capacitance**:\n\n")
+                    f.write("   .. list-table::\n")
+                    f.write("      :widths: 50 50\n")
+                    f.write("      :header-rows: 1\n\n")
+                    f.write("      * - Pin\n")
+                    f.write("        - Capacitance (pF)\n")
+                    for pin, cap in sorted(data['pins_cap'].items()):
+                        f.write(f"      * - {pin}\n")
+                        f.write(f"        - {cap}\n")
+                f.write("\n")
+
+            image_name = f"{cell['name']}.png"
+            f.write(f".. figure:: ../../../_static/images/{image_name}\n")
+            f.write("    :align: center\n")
+            f.write("    :width: 80%\n\n")
+            f.write(f"    {cell['name']} layout\n\n")
 
 
 def main():
@@ -230,52 +234,68 @@ def main():
     cells = parse_verilog(verilog_path)
     print(f"Found {len(cells)} cells in Verilog.")
 
+    # Group cells by type
+    groups = {}
+    for cell in cells:
+        t = cell['type']
+        if t not in groups:
+            groups[t] = []
+        groups[t].append(cell)
+
     lib_data = parse_liberty(lib_path)
     if lib_data:
         print(f"Parsed Liberty data for {len(lib_data)} cells.")
 
     os.makedirs(image_dst_dir, exist_ok=True)
+    if os.path.exists(output_dir):
+        for f in os.listdir(output_dir):
+            if f.startswith("sg13g2_") and f.endswith(".rst"):
+                os.remove(os.path.join(output_dir, f))
     os.makedirs(output_dir, exist_ok=True)
 
     image_count = 0
-    for cell in cells:
-        generate_rst(cell, output_dir, lib_data)
-        image_name = f"{cell['name']}.png"
-        src_image = os.path.join(image_src_dir, image_name)
-        if os.path.exists(src_image):
-            shutil.copy(src_image, os.path.join(image_dst_dir, image_name))
-            image_count += 1
+    for t, group_cells in groups.items():
+        group_name = f"sg13g2_{t}"
+        generate_rst(group_name, group_cells, output_dir, lib_data)
+        for cell in group_cells:
+            image_name = f"{cell['name']}.png"
+            src_image = os.path.join(image_src_dir, image_name)
+            if os.path.exists(src_image):
+                shutil.copy(src_image, os.path.join(image_dst_dir, image_name))
+                image_count += 1
 
-    print(f"Generated {len(cells)} documentation files.")
+    print(f"Generated {len(groups)} documentation files for {len(cells)} cells.")
     if image_count > 0:
         print(f"Copied {image_count} images from {image_src_dir} to {image_dst_dir}")
     else:
         print(f"No images found in {image_src_dir}. Existing images in {image_dst_dir} were preserved.")
 
-    if cells:
+    if groups:
         with open(os.path.join(output_dir, "index.rst"), 'w') as f:
             f.write("Standard Cells\n")
             f.write("==============\n\n")
 
-            f.write(".. list-table:: List of cells in sg13g2_stdcell\n")
+            f.write(".. list-table:: List of cell groups in sg13g2_stdcell\n")
             f.write("   :header-rows: 1\n")
-            f.write("   :widths: 20 40 10 30\n\n")
-            f.write("   * - Cell name\n")
+            f.write("   :widths: 30 50 20\n\n")
+            f.write("   * - Group name\n")
             f.write("     - Description\n")
             f.write("     - Type\n")
-            f.write("     - Verilog name\n")
 
-            for cell in cells:
-                f.write(f"   * - :doc:`{cell['name']}`\n")
-                f.write(f"     - {cell['description']}\n")
-                f.write("     - cell\n")
-                f.write(f"     - {cell['name']}\n")
+            for t in sorted(groups.keys()):
+                group_cells = groups[t]
+                group_name = f"sg13g2_{t}"
+                rep_cell = group_cells[0]
+                f.write(f"   * - :doc:`{group_name}`\n")
+                f.write(f"     - {rep_cell['description']}\n")
+                f.write(f"     - {t}\n")
 
             f.write("\n\n.. toctree::\n")
             f.write("   :maxdepth: 1\n")
             f.write("   :hidden:\n\n")
-            for cell in cells:
-                f.write(f"   {cell['name']}\n")
+            for t in sorted(groups.keys()):
+                group_name = f"sg13g2_{t}"
+                f.write(f"   {group_name}\n")
         print("Generated index.rst")
 
 
