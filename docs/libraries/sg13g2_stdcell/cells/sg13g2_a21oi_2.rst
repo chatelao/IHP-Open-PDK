@@ -10,6 +10,27 @@ sg13g2_a21oi_2
 -  **Inputs**:  3 (A1, A2, B1)
 -  **Outputs**: 1 (Y)
 
+Electrical and Physical Data
+----------------------------
+
+-  **Area**: 14.5152 µm²
+-  **Pin Capacitance**:
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Pin
+        - Capacitance (pF)
+      * - A1
+        - 0.00581309
+      * - A2
+        - 0.00608046
+      * - B1
+        - 0.00564011
+      * - Y
+        - 0.001
+
 sg13g2_a21oi_2 symbol
 ---------------------
 

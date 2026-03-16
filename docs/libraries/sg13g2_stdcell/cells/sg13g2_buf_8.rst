@@ -10,6 +10,23 @@ Buffer drive strength 8
 -  **Inputs**:  1 (A)
 -  **Outputs**: 1 (X)
 
+Electrical and Physical Data
+----------------------------
+
+-  **Area**: 23.5872 µm²
+-  **Pin Capacitance**:
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Pin
+        - Capacitance (pF)
+      * - A
+        - 0.00856578
+      * - X
+        - 0.001
+
 sg13g2_buf_8 symbol
 -------------------
 

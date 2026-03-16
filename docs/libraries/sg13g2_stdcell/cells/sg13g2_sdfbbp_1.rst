@@ -10,6 +10,35 @@ Posedge Two-Outputs D-Flip-Flop with Reset, Set and Scan
 -  **Inputs**:  6 (CLK, D, RESET_B, SCD, SCE, SET_B)
 -  **Outputs**: 2 (Q, Q_N)
 
+Electrical and Physical Data
+----------------------------
+
+-  **Area**: 63.504 µm²
+-  **Pin Capacitance**:
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Pin
+        - Capacitance (pF)
+      * - CLK
+        - 0
+      * - D
+        - 0
+      * - Q
+        - 0
+      * - Q_N
+        - 0
+      * - RESET_B
+        - 0
+      * - SCD
+        - 0
+      * - SCE
+        - 0
+      * - SET_B
+        - 0
+
 sg13g2_sdfbbp_1 symbol
 ----------------------
 

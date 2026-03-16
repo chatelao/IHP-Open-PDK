@@ -10,6 +10,25 @@ High-Active GATE Single-Output Q D-latch
 -  **Inputs**:  2 (D, GATE)
 -  **Outputs**: 1 (Q)
 
+Electrical and Physical Data
+----------------------------
+
+-  **Area**: 30.8448 µm²
+-  **Pin Capacitance**:
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Pin
+        - Capacitance (pF)
+      * - D
+        - 0.00228262
+      * - GATE
+        - 0.00228336
+      * - Q
+        - 0.001
+
 sg13g2_dlhq_1 symbol
 --------------------
 

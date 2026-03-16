@@ -10,6 +10,21 @@ Constant logic 0
 -  **Inputs**:  0 ()
 -  **Outputs**: 1 (L_HI)
 
+Electrical and Physical Data
+----------------------------
+
+-  **Area**: 7.2576 µm²
+-  **Pin Capacitance**:
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Pin
+        - Capacitance (pF)
+      * - L_HI
+        - 0
+
 sg13g2_tiehi symbol
 -------------------
 

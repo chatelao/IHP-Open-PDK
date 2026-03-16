@@ -23,6 +23,64 @@ import re
 import shutil
 
 
+def parse_liberty(lib_path):
+    if not os.path.exists(lib_path):
+        print(f"Liberty file not found: {lib_path}")
+        return {}
+
+    with open(lib_path, 'r') as f:
+        content = f.read()
+
+    # Remove comments
+    content = re.sub(r'/\*.*?\*/', '', content, flags=re.DOTALL)
+
+    cells_data = {}
+    cell_matches = re.finditer(r'cell\s*\(\s*"?(\w+)"?\s*\)\s*\{', content)
+    for match in cell_matches:
+        name = match.group(1)
+        start_index = match.end()
+
+        brace_count = 1
+        end_index = start_index
+        while brace_count > 0 and end_index < len(content):
+            if content[end_index] == '{':
+                brace_count += 1
+            elif content[end_index] == '}':
+                brace_count -= 1
+            end_index += 1
+
+        cell_block = content[start_index:end_index]
+
+        area_match = re.search(r'area\s*:\s*([\d\.]+);', cell_block)
+        area = area_match.group(1) if area_match else "0"
+
+        pins_data = {}
+        pin_matches = re.finditer(r'pin\s*\((.*?)\)\s*\{', cell_block)
+        for pm in pin_matches:
+            pin_name = pm.group(1)
+            p_start = pm.end()
+            p_brace = 1
+            p_end = p_start
+            while p_brace > 0 and p_end < len(cell_block):
+                if cell_block[p_end] == '{':
+                    p_brace += 1
+                elif cell_block[p_end] == '}':
+                    p_brace -= 1
+                p_end += 1
+            pin_block = cell_block[p_start:p_end]
+
+            cap_match = re.search(r'(?:capacitance|rise_capacitance|fall_capacitance)\s*:\s*([\d\.]+);', pin_block)
+            cap = cap_match.group(1) if cap_match else "0"
+            pins_data[pin_name] = cap
+
+        cells_data[name] = {
+            'area': area,
+            'pins_cap': pins_data
+        }
+
+    return cells_data
+
+
 def strip_comments(text):
     # Strip multi-line comments
     text = re.sub(r'/\*.*?\*/', '', text, flags=re.DOTALL)
@@ -92,7 +150,7 @@ def parse_verilog(verilog_path):
     return cells
 
 
-def generate_rst(cell, output_dir, image_relative_path):
+def generate_rst(cell, output_dir, lib_data=None):
     os.makedirs(output_dir, exist_ok=True)
     rst_path = os.path.join(output_dir, f"{cell['name']}.rst")
 
@@ -109,6 +167,23 @@ def generate_rst(cell, output_dir, image_relative_path):
         f.write("-  **Library**: sg13g2_stdcell\n")
         f.write(f"-  **Inputs**:  {len(cell['inputs'])} ({', '.join(cell['inputs'])})\n")
         f.write(f"-  **Outputs**: {len(cell['outputs'])} ({', '.join(cell['outputs'])})\n\n")
+
+        if lib_data and cell['name'] in lib_data:
+            data = lib_data[cell['name']]
+            f.write("Electrical and Physical Data\n")
+            f.write("-" * 28 + "\n\n")
+            f.write(f"-  **Area**: {data['area']} µm²\n")
+            if data['pins_cap']:
+                f.write("-  **Pin Capacitance**:\n\n")
+                f.write("   .. list-table::\n")
+                f.write("      :widths: 50 50\n")
+                f.write("      :header-rows: 1\n\n")
+                f.write("      * - Pin\n")
+                f.write("        - Capacitance (pF)\n")
+                for pin, cap in sorted(data['pins_cap'].items()):
+                    f.write(f"      * - {pin}\n")
+                    f.write(f"        - {cap}\n")
+            f.write("\n")
 
         f.write(f"{cell['name']} symbol\n")
         f.write("-" * (len(cell['name']) + 7) + "\n\n")
@@ -143,22 +218,28 @@ def main():
     repo_root = os.path.abspath(os.path.join(script_dir, ".."))
 
     verilog_path = os.path.join(repo_root, "ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v")
+    lib_path = os.path.join(repo_root, "ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_typ_1p20V_25C.lib")
     output_dir = os.path.join(repo_root, "docs/libraries/sg13g2_stdcell/cells")
     image_src_dir = os.path.join(repo_root, "rendered_cells")
     image_dst_dir = os.path.join(repo_root, "docs/_static/images")
 
     print(f"Verilog path: {verilog_path}")
+    print(f"Liberty path: {lib_path}")
     print(f"Output directory: {output_dir}")
 
     cells = parse_verilog(verilog_path)
     print(f"Found {len(cells)} cells in Verilog.")
+
+    lib_data = parse_liberty(lib_path)
+    if lib_data:
+        print(f"Parsed Liberty data for {len(lib_data)} cells.")
 
     os.makedirs(image_dst_dir, exist_ok=True)
     os.makedirs(output_dir, exist_ok=True)
 
     image_count = 0
     for cell in cells:
-        generate_rst(cell, output_dir, None)
+        generate_rst(cell, output_dir, lib_data)
         image_name = f"{cell['name']}.png"
         src_image = os.path.join(image_src_dir, image_name)
         if os.path.exists(src_image):

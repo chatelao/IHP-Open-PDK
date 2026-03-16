@@ -10,6 +10,25 @@ sg13g2_nor2b_1
 -  **Inputs**:  2 (A, B_N)
 -  **Outputs**: 1 (Y)
 
+Electrical and Physical Data
+----------------------------
+
+-  **Area**: 9.072 µm²
+-  **Pin Capacitance**:
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Pin
+        - Capacitance (pF)
+      * - A
+        - 0.00292348
+      * - B_N
+        - 0.00226593
+      * - Y
+        - 0.001
+
 sg13g2_nor2b_1 symbol
 ---------------------
 

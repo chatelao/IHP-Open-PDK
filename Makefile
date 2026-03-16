@@ -105,6 +105,15 @@ test-LVS-switch: env
 	@. $(VENV_RUN_COMMAND); cd $(KLAYOUT_LVS_TESTS) && make test-LVS-switch
 
 #=================================
+# ----- check-consistency --------
+#=================================
+
+.ONESHELL:
+check_consistency: env
+	@. $(VENV_RUN_COMMAND); echo "Running structural consistency check (Verilog vs SPICE vs Liberty)"
+	@. $(VENV_RUN_COMMAND); python3 scripts/check_pdk_consistency.py
+
+#=================================
 # ----- test-LVS-magic -----------
 #=================================
 

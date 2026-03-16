@@ -10,6 +10,11 @@ Filler 8 Tracks Width
 -  **Inputs**:  0 ()
 -  **Outputs**: 0 ()
 
+Electrical and Physical Data
+----------------------------
+
+-  **Area**: 14.5152 µm²
+
 sg13g2_fill_8 symbol
 --------------------
 

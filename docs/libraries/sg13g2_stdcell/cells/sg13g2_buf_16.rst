@@ -10,6 +10,23 @@ Buffer drive strength 16
 -  **Inputs**:  1 (A)
 -  **Outputs**: 1 (X)
 
+Electrical and Physical Data
+----------------------------
+
+-  **Area**: 45.36 µm²
+-  **Pin Capacitance**:
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Pin
+        - Capacitance (pF)
+      * - A
+        - 0.0170499
+      * - X
+        - 0.001
+
 sg13g2_buf_16 symbol
 --------------------
 

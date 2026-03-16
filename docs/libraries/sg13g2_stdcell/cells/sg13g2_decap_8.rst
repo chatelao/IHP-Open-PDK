@@ -10,6 +10,11 @@ Decoupling capasitance filler cell
 -  **Inputs**:  0 ()
 -  **Outputs**: 0 ()
 
+Electrical and Physical Data
+----------------------------
+
+-  **Area**: 12.7008 µm²
+
 sg13g2_decap_8 symbol
 ---------------------
 
