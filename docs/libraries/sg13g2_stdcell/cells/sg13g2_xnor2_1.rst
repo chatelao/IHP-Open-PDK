@@ -10,6 +10,25 @@ sg13g2_xnor2_1
 -  **Inputs**:  2 (A, B)
 -  **Outputs**: 1 (Y)
 
+Electrical and Physical Data
+----------------------------
+
+-  **Area**: 14.5152 µm²
+-  **Pin Capacitance**:
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Pin
+        - Capacitance (pF)
+      * - A
+        - 0.00562179
+      * - B
+        - 0.00508831
+      * - Y
+        - 0.001
+
 sg13g2_xnor2_1 symbol
 ---------------------
 

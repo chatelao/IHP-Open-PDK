@@ -10,6 +10,23 @@ Delay Cell, typical 0.7 ns
 -  **Inputs**:  1 (A)
 -  **Outputs**: 1 (X)
 
+Electrical and Physical Data
+----------------------------
+
+-  **Area**: 16.3296 µm²
+-  **Pin Capacitance**:
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Pin
+        - Capacitance (pF)
+      * - A
+        - 0.00150175
+      * - X
+        - 0.001
+
 sg13g2_dlygate4sd3_1 symbol
 ---------------------------
 

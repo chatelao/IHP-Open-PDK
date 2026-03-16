@@ -10,6 +10,11 @@ Filler 2 Tracks Width
 -  **Inputs**:  0 ()
 -  **Outputs**: 0 ()
 
+Electrical and Physical Data
+----------------------------
+
+-  **Area**: 3.6288 µm²
+
 sg13g2_fill_2 symbol
 --------------------
 

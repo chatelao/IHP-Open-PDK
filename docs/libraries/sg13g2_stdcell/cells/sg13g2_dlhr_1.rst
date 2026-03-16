@@ -10,6 +10,29 @@ High-Active GATE Two-Outputs Q Q_N D-latch with Low-Active Reset
 -  **Inputs**:  3 (D, GATE, RESET_B)
 -  **Outputs**: 2 (Q, Q_N)
 
+Electrical and Physical Data
+----------------------------
+
+-  **Area**: 32.6592 µm²
+-  **Pin Capacitance**:
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Pin
+        - Capacitance (pF)
+      * - D
+        - 0.00207682
+      * - GATE
+        - 0.00223878
+      * - Q
+        - 0.001
+      * - Q_N
+        - 0.001
+      * - RESET_B
+        - 0.00311214
+
 sg13g2_dlhr_1 symbol
 --------------------
 

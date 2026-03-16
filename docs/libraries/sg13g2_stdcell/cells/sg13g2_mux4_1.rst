@@ -10,6 +10,33 @@ Multiplexer from 4 to 1
 -  **Inputs**:  6 (A0, A1, A2, A3, S0, S1)
 -  **Outputs**: 1 (X)
 
+Electrical and Physical Data
+----------------------------
+
+-  **Area**: 38.1024 µm²
+-  **Pin Capacitance**:
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Pin
+        - Capacitance (pF)
+      * - A0
+        - 0.0027824
+      * - A1
+        - 0.00275974
+      * - A2
+        - 0.00278105
+      * - A3
+        - 0.00284281
+      * - S0
+        - 0.00824878
+      * - S1
+        - 0.00501805
+      * - X
+        - 0.001
+
 sg13g2_mux4_1 symbol
 --------------------
 

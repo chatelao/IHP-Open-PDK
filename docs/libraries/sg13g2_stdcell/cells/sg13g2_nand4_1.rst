@@ -10,6 +10,29 @@ sg13g2_nand4_1
 -  **Inputs**:  4 (A, B, C, D)
 -  **Outputs**: 1 (Y)
 
+Electrical and Physical Data
+----------------------------
+
+-  **Area**: 10.8864 µm²
+-  **Pin Capacitance**:
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Pin
+        - Capacitance (pF)
+      * - A
+        - 0.00287103
+      * - B
+        - 0.00301029
+      * - C
+        - 0.00302909
+      * - D
+        - 0.00299933
+      * - Y
+        - 0.001
+
 sg13g2_nand4_1 symbol
 ---------------------
 

@@ -10,6 +10,21 @@ Leakage current compensator (bus holder)
 -  **Inputs**:  0 ()
 -  **Outputs**: 0 ()
 
+Electrical and Physical Data
+----------------------------
+
+-  **Area**: 9.072 µm²
+-  **Pin Capacitance**:
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Pin
+        - Capacitance (pF)
+      * - SH
+        - 0.0181867
+
 sg13g2_sighold symbol
 ---------------------
 

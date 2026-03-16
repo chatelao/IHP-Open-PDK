@@ -99,5 +99,5 @@ This roadmap outlines the automated generation processes for documentation, tool
 - [ ] 14.1 Perform exhaustive standard cell characterization via parallelized SPICE simulations.
 - [ ] 14.2 Model propagation delay and power dissipation as functions of slew and load.
 - [ ] 14.3 Automate the assembly of Liberty (.lib) files across various process corners.
-- [ ] 14.4 Ensure structural consistency between characterization netlists and visual schematics.
+- [x] 14.4 Ensure structural consistency between characterization netlists and visual schematics.
 - [ ] 14.5 Validate generated timing models against OpenROAD and OpenSTA requirements.

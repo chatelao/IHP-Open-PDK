@@ -10,6 +10,25 @@ sg13g2_and2_2
 -  **Inputs**:  2 (A, B)
 -  **Outputs**: 1 (X)
 
+Electrical and Physical Data
+----------------------------
+
+-  **Area**: 10.8864 µm²
+-  **Pin Capacitance**:
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Pin
+        - Capacitance (pF)
+      * - A
+        - 0.00253864
+      * - B
+        - 0.00255322
+      * - X
+        - 0.001
+
 sg13g2_and2_2 symbol
 --------------------
 

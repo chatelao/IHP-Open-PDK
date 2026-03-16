@@ -10,6 +10,29 @@ Scan gated clock
 -  **Inputs**:  3 (GATE, CLK, SCE)
 -  **Outputs**: 1 (GCLK)
 
+Electrical and Physical Data
+----------------------------
+
+-  **Area**: 30.8448 µm²
+-  **Pin Capacitance**:
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Pin
+        - Capacitance (pF)
+      * - CLK
+        - 0.00497857
+      * - GATE
+        - 0.00193037
+      * - GCLK
+        - 0.001
+      * - SCE
+        - 0.00232746
+      * - int_GATE
+        - 0
+
 sg13g2_slgcp_1 symbol
 ---------------------
 

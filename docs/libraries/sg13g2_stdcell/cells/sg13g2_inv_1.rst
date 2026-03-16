@@ -10,6 +10,23 @@ Inverter
 -  **Inputs**:  1 (A)
 -  **Outputs**: 1 (Y)
 
+Electrical and Physical Data
+----------------------------
+
+-  **Area**: 5.4432 µm²
+-  **Pin Capacitance**:
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Pin
+        - Capacitance (pF)
+      * - A
+        - 0.00286745
+      * - Y
+        - 0.001
+
 sg13g2_inv_1 symbol
 -------------------
 

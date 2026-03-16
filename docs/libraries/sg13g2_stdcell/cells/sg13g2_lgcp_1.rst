@@ -10,6 +10,27 @@ Posedge Clock Gating cell, Low Latch Enable
 -  **Inputs**:  2 (CLK, GATE)
 -  **Outputs**: 1 (GCLK)
 
+Electrical and Physical Data
+----------------------------
+
+-  **Area**: 27.216 µm²
+-  **Pin Capacitance**:
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Pin
+        - Capacitance (pF)
+      * - CLK
+        - 0.00493856
+      * - GATE
+        - 0.002298
+      * - GCLK
+        - 0.001
+      * - int_GATE
+        - 0
+
 sg13g2_lgcp_1 symbol
 --------------------
 

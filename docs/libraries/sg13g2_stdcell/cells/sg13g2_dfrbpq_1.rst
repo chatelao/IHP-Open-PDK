@@ -10,6 +10,27 @@ Posedge Single-Output Q D-Flip-Flop with Low-Active Reset
 -  **Inputs**:  3 (CLK, D, RESET_B)
 -  **Outputs**: 1 (Q)
 
+Electrical and Physical Data
+----------------------------
+
+-  **Area**: 48.9888 µm²
+-  **Pin Capacitance**:
+
+   .. list-table::
+      :widths: 50 50
+      :header-rows: 1
+
+      * - Pin
+        - Capacitance (pF)
+      * - CLK
+        - 0.00276976
+      * - D
+        - 0.00141954
+      * - Q
+        - 0.001
+      * - RESET_B
+        - 0.00508684
+
 sg13g2_dfrbpq_1 symbol
 ----------------------
 
