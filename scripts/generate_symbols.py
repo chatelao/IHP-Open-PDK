@@ -3,6 +3,7 @@
 import os
 import sys
 import shutil
+import argparse
 
 # Add symbolator and hdlparse to sys.path
 script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -10,16 +11,13 @@ repo_root = os.path.abspath(os.path.join(script_dir, ".."))
 sys.path.append(os.path.join(repo_root, "symbolator"))
 sys.path.append(os.path.join(repo_root, "hdlparse"))
 
-from symbolator import make_symbol, HdlSymbol, DrawStyle
-from nucanvas import NuCanvas
+from symbolator import make_symbol, HdlSymbol
+from nucanvas.nucanvas import NuCanvas
 from nucanvas.svg_backend import SvgSurface
-from nucanvas.shapes import PathShape, OvalShape
+from nucanvas.shapes import PathShape, OvalShape, DrawStyle
 from hdlparse import verilog_parser as vlog
 
-def generate_symbols():
-    verilog_path = os.path.join(repo_root, "ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v")
-    output_dir = os.path.join(repo_root, "docs/_static/symbols")
-
+def generate_symbols(verilog_path, output_dir):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
@@ -62,4 +60,24 @@ def generate_symbols():
         nc.render()
 
 if __name__ == "__main__":
-    generate_symbols()
+    parser = argparse.ArgumentParser(description='Generate symbols.')
+    parser.add_argument('--library', default='sg13g2_stdcell', help='Library name')
+    parser.add_argument('--verilog', help='Path to Verilog file or directory')
+    args = parser.parse_args()
+
+    lib_name = args.library
+    output_dir = os.path.join(repo_root, "docs/_static/symbols")
+
+    if args.verilog:
+        v_path = args.verilog
+    else:
+        v_path = os.path.join(repo_root, f"ihp-sg13g2/libs.ref/{lib_name}/verilog")
+        if not os.path.isdir(v_path):
+             v_path = os.path.join(repo_root, f"ihp-sg13g2/libs.ref/{lib_name}/verilog/{lib_name}.v")
+
+    if os.path.isdir(v_path):
+        for f in os.listdir(v_path):
+            if f.endswith(".v"):
+                generate_symbols(os.path.join(v_path, f), output_dir)
+    else:
+        generate_symbols(v_path, output_dir)

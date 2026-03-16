@@ -21,6 +21,7 @@
 import os
 import re
 import shutil
+import argparse
 
 
 def parse_liberty(lib_path):
@@ -105,6 +106,12 @@ def parse_verilog(verilog_path):
         blocks.append(content[last_pos:match.end()])
         last_pos = match.end()
 
+    # If no endmodule found, try matching module ... ;
+    if not blocks:
+         mod_matches = re.finditer(r'module\s+(\w+)\s*(?:\((.*?)\))?;', content, re.DOTALL)
+         for match in mod_matches:
+             blocks.append(match.group(0))
+
     for block in blocks:
         # Extract module name and pins
         mod_match = re.search(r'module\s+(\w+)\s*(?:\((.*?)\))?;', block, re.DOTALL)
@@ -125,9 +132,9 @@ def parse_verilog(verilog_path):
         clean_block = strip_comments(block)
 
         # Extract inputs/outputs with more precise regex
-        # This matches 'input [wire|reg|...] PIN1, PIN2;'
         inputs_raw = re.findall(r'^\s*input\s+(?:wire\s+|reg\s+)?(.*?);', clean_block, re.MULTILINE | re.DOTALL)
         outputs_raw = re.findall(r'^\s*output\s+(?:wire\s+|reg\s+)?(.*?);', clean_block, re.MULTILINE | re.DOTALL)
+        inouts_raw = re.findall(r'^\s*inout\s+(?:wire\s+|reg\s+)?(.*?);', clean_block, re.MULTILINE | re.DOTALL)
 
         inputs = []
         for line in inputs_raw:
@@ -139,18 +146,24 @@ def parse_verilog(verilog_path):
             pins = [p.strip() for p in line.split(',')]
             outputs.extend([p for p in pins if p])
 
+        inouts = []
+        for line in inouts_raw:
+            pins = [p.strip() for p in line.split(',')]
+            inouts.extend([p for p in pins if p])
+
         cells.append({
             'name': cell_name,
             'type': cell_type,
             'description': description,
             'inputs': inputs,
-            'outputs': outputs
+            'outputs': outputs,
+            'inouts': inouts
         })
 
     return cells
 
 
-def generate_rst(group_name, group_cells, output_dir, lib_data=None):
+def generate_rst(group_name, group_cells, output_dir, lib_name, lib_data=None):
     os.makedirs(output_dir, exist_ok=True)
     rst_path = os.path.join(output_dir, f"{group_name}.rst")
 
@@ -166,9 +179,14 @@ def generate_rst(group_name, group_cells, output_dir, lib_data=None):
 
         f.write(f"-  **Group name**: {group_name}\n")
         f.write("-  **Type**: cell\n")
-        f.write("-  **Library**: sg13g2_stdcell\n")
-        f.write(f"-  **Inputs**:  {len(rep_cell['inputs'])} ({', '.join(rep_cell['inputs'])})\n")
-        f.write(f"-  **Outputs**: {len(rep_cell['outputs'])} ({', '.join(rep_cell['outputs'])})\n\n")
+        f.write(f"-  **Library**: {lib_name}\n")
+        if rep_cell['inputs']:
+            f.write(f"-  **Inputs**:  {len(rep_cell['inputs'])} ({', '.join(rep_cell['inputs'])})\n")
+        if rep_cell['outputs']:
+            f.write(f"-  **Outputs**: {len(rep_cell['outputs'])} ({', '.join(rep_cell['outputs'])})\n")
+        if rep_cell['inouts']:
+            f.write(f"-  **Inouts**:  {len(rep_cell['inouts'])} ({', '.join(rep_cell['inouts'])})\n")
+        f.write("\n")
 
         f.write(f"{group_name} symbols\n")
         f.write("-" * (len(group_name) + 8) + "\n\n")
@@ -179,14 +197,16 @@ def generate_rst(group_name, group_cells, output_dir, lib_data=None):
         f.write("    :width: 60%\n\n")
         f.write(f"    {group_name} symbol\n\n")
 
-        f.write(f"{group_name} schematic\n")
-        f.write("-" * (len(group_name) + 10) + "\n\n")
+        # Only add schematic if it exists or for stdcell
+        if lib_name == "sg13g2_stdcell" or os.path.exists(os.path.join("docs/_static/schematics", f"{rep_cell['name']}.svg")):
+            f.write(f"{group_name} schematic\n")
+            f.write("-" * (len(group_name) + 10) + "\n\n")
 
-        schematic_name = f"{rep_cell['name']}.svg"
-        f.write(f".. figure:: ../../../_static/schematics/{schematic_name}\n")
-        f.write("    :align: center\n")
-        f.write("    :width: 80%\n\n")
-        f.write(f"    {group_name} schematic\n\n")
+            schematic_name = f"{rep_cell['name']}.svg"
+            f.write(f".. figure:: ../../../_static/schematics/{schematic_name}\n")
+            f.write("    :align: center\n")
+            f.write("    :width: 80%\n\n")
+            f.write(f"    {group_name} schematic\n\n")
 
         f.write(f"{group_name} GDSII layouts\n")
         f.write("-" * (len(group_name) + 15) + "\n\n")
@@ -218,15 +238,28 @@ def generate_rst(group_name, group_cells, output_dir, lib_data=None):
 
 
 def main():
+    parser = argparse.ArgumentParser(description='Generate cell documentation.')
+    parser.add_argument('--library', default='sg13g2_stdcell', help='Library name')
+    parser.add_argument('--verilog', help='Path to Verilog file')
+    parser.add_argument('--liberty', help='Path to Liberty file')
+    args = parser.parse_args()
+
     script_dir = os.path.dirname(os.path.abspath(__file__))
     repo_root = os.path.abspath(os.path.join(script_dir, ".."))
 
-    verilog_path = os.path.join(repo_root, "ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v")
-    lib_path = os.path.join(repo_root, "ihp-sg13g2/libs.ref/sg13g2_stdcell/lib/sg13g2_stdcell_typ_1p20V_25C.lib")
-    output_dir = os.path.join(repo_root, "docs/libraries/sg13g2_stdcell/cells")
+    lib_name = args.library
+    verilog_path = args.verilog or os.path.join(repo_root, f"ihp-sg13g2/libs.ref/{lib_name}/verilog/{lib_name}.v")
+    lib_path = args.liberty or os.path.join(repo_root, f"ihp-sg13g2/libs.ref/{lib_name}/lib/{lib_name}_typ_1p20V_25C.lib")
+
+    # Special handling for IO typ lib name
+    if lib_name == "sg13g2_io" and not args.liberty:
+        lib_path = os.path.join(repo_root, "ihp-sg13g2/libs.ref/sg13g2_io/lib/sg13g2_io_typ_1p2V_3p3V_25C.lib")
+
+    output_dir = os.path.join(repo_root, f"docs/libraries/{lib_name}/cells")
     image_src_dir = os.path.join(repo_root, "rendered_cells")
     image_dst_dir = os.path.join(repo_root, "docs/_static/images")
 
+    print(f"Library: {lib_name}")
     print(f"Verilog path: {verilog_path}")
     print(f"Liberty path: {lib_path}")
     print(f"Output directory: {output_dir}")
@@ -249,14 +282,18 @@ def main():
     os.makedirs(image_dst_dir, exist_ok=True)
     if os.path.exists(output_dir):
         for f in os.listdir(output_dir):
-            if f.startswith("sg13g2_") and f.endswith(".rst"):
+            if f.endswith(".rst") and f != "index.rst":
                 os.remove(os.path.join(output_dir, f))
     os.makedirs(output_dir, exist_ok=True)
 
     image_count = 0
     for t, group_cells in groups.items():
-        group_name = f"sg13g2_{t}"
-        generate_rst(group_name, group_cells, output_dir, lib_data)
+        group_name = f"{lib_name}_{t}" if lib_name == "sg13g2_stdcell" else f"{t}"
+        # For IO and SRAM, maybe just use the type as group name if it's unique enough
+        if lib_name != "sg13g2_stdcell":
+            group_name = t
+
+        generate_rst(group_name, group_cells, output_dir, lib_name, lib_data)
         for cell in group_cells:
             image_name = f"{cell['name']}.png"
             src_image = os.path.join(image_src_dir, image_name)
@@ -271,11 +308,12 @@ def main():
         print(f"No images found in {image_src_dir}. Existing images in {image_dst_dir} were preserved.")
 
     if groups:
+        title = f"{lib_name} Cells"
         with open(os.path.join(output_dir, "index.rst"), 'w') as f:
-            f.write("Standard Cells\n")
-            f.write("==============\n\n")
+            f.write(f"{title}\n")
+            f.write("=" * len(title) + "\n\n")
 
-            f.write(".. list-table:: List of cell groups in sg13g2_stdcell\n")
+            f.write(f".. list-table:: List of cell groups in {lib_name}\n")
             f.write("   :header-rows: 1\n")
             f.write("   :widths: 30 50 20\n\n")
             f.write("   * - Group name\n")
@@ -284,7 +322,10 @@ def main():
 
             for t in sorted(groups.keys()):
                 group_cells = groups[t]
-                group_name = f"sg13g2_{t}"
+                group_name = t
+                if lib_name == "sg13g2_stdcell":
+                    group_name = f"sg13g2_{t}"
+
                 rep_cell = group_cells[0]
                 f.write(f"   * - :doc:`{group_name}`\n")
                 f.write(f"     - {rep_cell['description']}\n")
@@ -294,9 +335,11 @@ def main():
             f.write("   :maxdepth: 1\n")
             f.write("   :hidden:\n\n")
             for t in sorted(groups.keys()):
-                group_name = f"sg13g2_{t}"
+                group_name = t
+                if lib_name == "sg13g2_stdcell":
+                    group_name = f"sg13g2_{t}"
                 f.write(f"   {group_name}\n")
-        print("Generated index.rst")
+        print(f"Generated index.rst for {lib_name}")
 
 
 if __name__ == "__main__":

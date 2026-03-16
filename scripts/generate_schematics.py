@@ -4,6 +4,7 @@ import os
 import subprocess
 import re
 import shutil
+import argparse
 
 
 def get_cells(verilog_path):
@@ -22,7 +23,7 @@ def get_cells(verilog_path):
 
     cells = []
     for block in blocks:
-        mod_match = re.search(r'module\s+(\w+)\s*\((.*?)\);', block, re.DOTALL)
+        mod_match = re.search(r'module\s+(\w+)\s*(?:\((.*?)\))?;', block, re.DOTALL)
         if mod_match:
             cell_name = mod_match.group(1)
             # Remove specify blocks from this cell's code
@@ -36,12 +37,8 @@ def get_cells(verilog_path):
     return cells
 
 
-def generate_schematics():
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    repo_root = os.path.abspath(os.path.join(script_dir, ".."))
-
-    verilog_path = os.path.join(repo_root, "ihp-sg13g2/libs.ref/sg13g2_stdcell/verilog/sg13g2_stdcell.v")
-    output_dir = os.path.join(repo_root, "docs/_static/schematics")
+def generate_schematics(verilog_path, output_dir):
+    repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
     temp_dir = os.path.join(repo_root, "temp_json")
 
     if not os.path.exists(output_dir):
@@ -50,7 +47,11 @@ def generate_schematics():
         os.makedirs(temp_dir)
 
     cells = get_cells(verilog_path)
-    print(f"Found {len(cells)} cells. Generating schematics...")
+    if not cells:
+        print(f"No modules found in {verilog_path}")
+        return
+
+    print(f"Found {len(cells)} cells in {verilog_path}. Generating schematics...")
 
     blackboxes = """
 module ihp_dff_r (q, v, clk, d, r, xcr); output q; input v, clk, d, r, xcr; endmodule
@@ -62,7 +63,8 @@ module ihp_dff_rs (q, v, clk, d, r, s, xcr, xcs); output q; input v, clk, d, r, 
 
     for cell in cells:
         name = cell['name']
-        if "fill" in name or "decap" in name:
+        if "fill" in name.lower() or "decap" in name.lower() or "corner" in name.lower() or "iopad" in name.lower():
+            # Skip IO pads as they are mostly blackboxes and don't render well with netlistsvg usually
             continue
 
         v_path = os.path.join(temp_dir, f"{name}.v")
@@ -75,7 +77,7 @@ module ihp_dff_rs (q, v, clk, d, r, s, xcr, xcs); output q; input v, clk, d, r, 
 
         # Run Yosys
         yosys_cmd = [
-            "yosys", "-p",
+            "yosys", "-q", "-p",
             f"read_verilog {v_path}; prep -top {name}; write_json {json_path}"
         ]
 
@@ -87,12 +89,39 @@ module ihp_dff_rs (q, v, clk, d, r, s, xcr, xcs); output q; input v, clk, d, r, 
             subprocess.run(netlistsvg_cmd, check=True, capture_output=True, text=True)
             print(f"Generated schematic for {name}")
         except subprocess.CalledProcessError as e:
-            print(f"Error generating schematic for {name}: {e.stderr}")
+            # print(f"Error generating schematic for {name}: {e.stderr}")
+            pass
 
     # Cleanup temp dir
-    shutil.rmtree(temp_dir)
-    print("Schematic generation complete.")
+    if os.path.exists(temp_dir):
+        shutil.rmtree(temp_dir)
 
 
 if __name__ == "__main__":
-    generate_schematics()
+    parser = argparse.ArgumentParser(description='Generate schematics.')
+    parser.add_argument('--library', default='sg13g2_stdcell', help='Library name')
+    parser.add_argument('--verilog', help='Path to Verilog file')
+    args = parser.parse_args()
+
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    repo_root = os.path.abspath(os.path.join(script_dir, ".."))
+
+    lib_name = args.library
+    output_dir = os.path.join(repo_root, "docs/_static/schematics")
+
+    if args.verilog:
+        v_path = args.verilog
+    else:
+        # For IO and SRAM, we probably only want to try the main verilog file if it exists
+        v_path = os.path.join(repo_root, f"ihp-sg13g2/libs.ref/{lib_name}/verilog/{lib_name}.v")
+
+    if os.path.isdir(v_path):
+        for f in os.listdir(v_path):
+            if f.endswith(".v"):
+                generate_schematics(os.path.join(v_path, f), output_dir)
+    elif os.path.exists(v_path):
+        generate_schematics(v_path, output_dir)
+    else:
+        print(f"Verilog path {v_path} does not exist.")
+
+    print("Schematic generation complete.")
