@@ -3,7 +3,7 @@
 <svg xmlns="http://www.w3.org/2000/svg"
 xmlns:xlink="http://www.w3.org/1999/xlink"
 xml:space="preserve"
-width="191" height="280" viewBox="-25 -44 191.0 280.0" version="1.1">
+width="191" height="300" viewBox="-25 -44 191.0 300.0" version="1.1">
 <style type="text/css">
 <![CDATA[
 .fnt1 {fill:#000000;
@@ -23,68 +23,68 @@ width="191" height="280" viewBox="-25 -44 191.0 280.0" version="1.1">
 ]]>
 </style>
 <defs>
-<marker id="bubble" markerWidth="7.0" markerHeight="7.0" viewBox="0 0 7.0 7.0" refX="3.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
-<g transform="translate(3.5,3.5)"><ellipse cx="0.0" cy="0.0" rx="3.0" ry="3.0" stroke="#000000" fill="#FFFFFF" stroke-width="1"/>
-</g>
-</marker>
 <marker id="clock" markerWidth="8.0" markerHeight="15.0" viewBox="0 0 8.0 15.0" refX="0.5" refY="7.5" orient="auto" markerUnits="userSpaceOnUse">
 <g transform="translate(0.5,7.5)"><path d="M 0 -7 L 0 7 L 7 0 z" stroke="#000000" fill="#FFFFFF" stroke-width="1"/>
 </g>
 </marker>
+<marker id="bubble" markerWidth="7.0" markerHeight="7.0" viewBox="0 0 7.0 7.0" refX="3.5" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+<g transform="translate(3.5,3.5)"><ellipse cx="0.0" cy="0.0" rx="3.0" ry="3.0" stroke="#000000" fill="#FFFFFF" stroke-width="1"/>
+</g>
+</marker>
 </defs>
 <rect x="-25" y="-44" width="100%" height="100%" fill="white"/><g transform="translate(0,0)">
-<rect x="0" y="-15.0" width="140.0" height="124.4" stroke="#000000" fill="#CCFED2" stroke-width="1"/>
-<text class="fnt1" x="70.0" y="0" text-anchor="middle" dy="-7.199999999999999">Data Signals</text>
-<g transform="translate(0,14.399999999999999)">
+<rect x="0" y="-15.0" width="140.0" height="134.4" stroke="#000000" fill="#CCFED2" stroke-width="1"/>
+<text class="fnt1" x="70.0" y="0" text-anchor="middle" dy="5.4719999999999995">Data Signals</text>
+<g transform="translate(0,24.4)">
 <line x1="-20" y1="0" x2="0" y2="0" stroke="#000000" fill="none" stroke-width="1" marker-end="url(#clock)"/>
-<text class="fnt2" x="10" y="0" text-anchor="normal" dy="-7.199999999999999">CLK</text>
+<text class="fnt2" x="10" y="0" text-anchor="normal" dy="5.4719999999999995">CLK</text>
 </g>
-<g transform="translate(0,34.4)">
+<g transform="translate(0,44.4)">
 <line x1="-20" y1="0" x2="0" y2="0" stroke="#000000" fill="none" stroke-width="1"/>
-<text class="fnt2" x="10" y="0" text-anchor="normal" dy="-7.199999999999999">D</text>
+<text class="fnt2" x="10" y="0" text-anchor="normal" dy="5.4719999999999995">D</text>
 </g>
-<g transform="translate(0,54.4)">
+<g transform="translate(0,64.4)">
 <line x1="-20" y1="0" x2="-3.5" y2="0.0" stroke="#000000" fill="none" stroke-width="1" marker-end="url(#bubble)"/>
-<text class="fnt2" x="10" y="0" text-anchor="normal" dy="-7.199999999999999">RESET_B</text>
+<text class="fnt2" x="10" y="0" text-anchor="normal" dy="5.4719999999999995">RESET_B</text>
 </g>
-<g transform="translate(0,74.4)">
+<g transform="translate(0,84.4)">
 <line x1="-20" y1="0" x2="0" y2="0" stroke="#000000" fill="none" stroke-width="1"/>
-<text class="fnt2" x="10" y="0" text-anchor="normal" dy="-7.199999999999999">SCD</text>
+<text class="fnt2" x="10" y="0" text-anchor="normal" dy="5.4719999999999995">SCD</text>
 </g>
-<g transform="translate(0,94.4)">
+<g transform="translate(0,104.4)">
 <line x1="-20" y1="0" x2="0" y2="0" stroke="#000000" fill="none" stroke-width="1"/>
-<text class="fnt2" x="10" y="0" text-anchor="normal" dy="-7.199999999999999">SCE</text>
+<text class="fnt2" x="10" y="0" text-anchor="normal" dy="5.4719999999999995">SCE</text>
 </g>
-<g transform="translate(140.0,14.399999999999999)">
+<g transform="translate(140.0,24.4)">
 <line x1="20" y1="0" x2="0" y2="0" stroke="#000000" fill="none" stroke-width="1"/>
-<text class="fnt2" x="-10" y="0" text-anchor="end" dy="-7.199999999999999">Q</text>
+<text class="fnt2" x="-10" y="0" text-anchor="end" dy="5.4719999999999995">Q</text>
 </g>
-<g transform="translate(140.0,34.4)">
+<g transform="translate(140.0,44.4)">
 <line x1="20" y1="0" x2="3.5" y2="-4.286263797015736e-16" stroke="#000000" fill="none" stroke-width="1" marker-end="url(#bubble)"/>
-<text class="fnt2" x="-10" y="0" text-anchor="end" dy="-7.199999999999999">Q_N</text>
+<text class="fnt2" x="-10" y="0" text-anchor="end" dy="5.4719999999999995">Q_N</text>
 </g>
 </g>
-<g transform="translate(0,124.4)">
-<rect x="0" y="-15.0" width="140.0" height="104.4" stroke="#000000" fill="#FECFCF" stroke-width="1"/>
-<text class="fnt1" x="70.0" y="0" text-anchor="middle" dy="-7.199999999999999">Power</text>
-<g transform="translate(0,14.399999999999999)">
+<g transform="translate(0,134.4)">
+<rect x="0" y="-15.0" width="140.0" height="114.4" stroke="#000000" fill="#FECFCF" stroke-width="1"/>
+<text class="fnt1" x="70.0" y="0" text-anchor="middle" dy="5.4719999999999995">Power</text>
+<g transform="translate(0,24.4)">
 <line x1="-20" y1="0" x2="0" y2="0" stroke="#000000" fill="none" stroke-width="1"/>
-<text class="fnt2" x="10" y="0" text-anchor="normal" dy="-7.199999999999999">VPB</text>
+<text class="fnt2" x="10" y="0" text-anchor="normal" dy="5.4719999999999995">VPB</text>
 </g>
-<g transform="translate(0,34.4)">
+<g transform="translate(0,44.4)">
 <line x1="-20" y1="0" x2="0" y2="0" stroke="#000000" fill="none" stroke-width="1"/>
-<text class="fnt2" x="10" y="0" text-anchor="normal" dy="-7.199999999999999">VPWR</text>
+<text class="fnt2" x="10" y="0" text-anchor="normal" dy="5.4719999999999995">VPWR</text>
 </g>
-<g transform="translate(0,54.4)">
+<g transform="translate(0,64.4)">
 <line x1="-20" y1="0" x2="0" y2="0" stroke="#000000" fill="none" stroke-width="1"/>
-<text class="fnt2" x="10" y="0" text-anchor="normal" dy="-7.199999999999999">VGND</text>
+<text class="fnt2" x="10" y="0" text-anchor="normal" dy="5.4719999999999995">VGND</text>
 </g>
-<g transform="translate(0,74.4)">
+<g transform="translate(0,84.4)">
 <line x1="-20" y1="0" x2="0" y2="0" stroke="#000000" fill="none" stroke-width="1"/>
-<text class="fnt2" x="10" y="0" text-anchor="normal" dy="-7.199999999999999">VNB</text>
+<text class="fnt2" x="10" y="0" text-anchor="normal" dy="5.4719999999999995">VNB</text>
 </g>
 </g>
-<rect x="1.0" y="-14.0" width="138.0" height="226.8" stroke="#000000" fill="none" stroke-width="3"/>
-<text class="fnt3" x="70.0" y="-24.0" text-anchor="middle" dy="-15.2">sg13g2_sdfrbp_2</text>
-<text class="fnt4" x="70.0" y="222.8" text-anchor="middle" dy="-4.0">sg13g2_stdcell</text>
+<rect x="1.0" y="-14.0" width="138.0" height="246.8" stroke="#000000" fill="none" stroke-width="3"/>
+<text class="fnt3" x="70.0" y="-24.0" text-anchor="middle" dy="1.6960000000000015">sg13g2_sdfrbp_2</text>
+<text class="fnt4" x="70.0" y="242.8" text-anchor="middle" dy="6.5600000000000005">sg13g2_stdcell</text>
 </svg>
