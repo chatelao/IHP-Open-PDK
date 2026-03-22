@@ -10,10 +10,10 @@ repo_root = os.path.abspath(os.path.join(script_dir, ".."))
 sys.path.append(os.path.join(repo_root, "symbolator"))
 sys.path.append(os.path.join(repo_root, "hdlparse"))
 
-from symbolator import make_symbol, HdlSymbol, DrawStyle
-from nucanvas import NuCanvas
+from symbolator import make_symbol, HdlSymbol
+from nucanvas.nucanvas import NuCanvas
 from nucanvas.svg_backend import SvgSurface
-from nucanvas.shapes import PathShape, OvalShape
+from nucanvas.shapes import PathShape, OvalShape, DrawStyle
 from hdlparse import verilog_parser as vlog
 
 def generate_symbols():
